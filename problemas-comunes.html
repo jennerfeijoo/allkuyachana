@@ -1,258 +1,714 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solución de Problemas Comunes | GuíaCanina Abierta</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .prose h2 {
-            font-size: 1.875rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            margin-top: 2.5rem;
-            color: #1e293b; /* slate-800 */
-        }
-        .prose h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            margin-top: 2rem;
-            color: #334155; /* slate-700 */
-        }
-        .prose strong {
-            color: #0f172a; /* slate-900 */
-        }
-        .prose a {
-            color: #0284c7; /* sky-600 */
-            text-decoration: none;
-        }
-        .prose a:hover {
-            text-decoration: underline;
-        }
-        .prose ul > li::before {
-             background-color: #0284c7; /* sky-600 */
-        }
-        .sticky-nav {
-            position: sticky;
-            top: 100px; /* Adjust based on header height */
-        }
-        .callout {
-            background-color: #f0f9ff; /* sky-50 */
-            border-left: 4px solid #0ea5e9; /* sky-500 */
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin: 1.5rem 0;
-        }
-        .callout p {
-            margin: 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solución de Problemas Comunes | GuíaCanina Abierta</title>
+  <meta name="description" content="Guía práctica y basada en ciencia para abordar problemas comunes en perros: ansiedad por separación, reactividad con correa, protección de recursos y manejo conductual." />
+  <meta name="author" content="Jenner Feijoo" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-500: #64748b;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --sky-500: #0ea5e9;
+      --sky-600: #0284c7;
+      --emerald-500: #10b981;
+      --amber-500: #f59e0b;
+      --rose-500: #f43f5e;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-700);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 1rem;
+      background: white;
+      color: black;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      z-index: 200;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, var(--sky-500), var(--emerald-500));
+      z-index: 100;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 1rem;
+      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.06);
+    }
+
+    .hero-grid {
+      background:
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.08), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.08), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 6.2rem;
+      max-height: calc(100vh - 7rem);
+      overflow: auto;
+      scrollbar-width: thin;
+    }
+
+    .section-anchor {
+      scroll-margin-top: 7rem;
+    }
+
+    .toc-link.active {
+      color: var(--sky-600);
+      font-weight: 700;
+    }
+
+    .prose-custom h2 {
+      font-size: clamp(1.75rem, 2vw, 2.15rem);
+      line-height: 1.2;
+      font-weight: 800;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: var(--slate-900);
+    }
+
+    .prose-custom h3 {
+      font-size: clamp(1.25rem, 1.7vw, 1.5rem);
+      line-height: 1.3;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--slate-800);
+    }
+
+    .prose-custom h4 {
+      font-size: 1.05rem;
+      line-height: 1.4;
+      font-weight: 700;
+      margin-top: 1.35rem;
+      margin-bottom: 0.5rem;
+      color: var(--slate-800);
+    }
+
+    .prose-custom p {
+      margin: 0 0 1rem 0;
+      line-height: 1.8;
+    }
+
+    .prose-custom ul,
+    .prose-custom ol {
+      margin: 0 0 1rem 0;
+      padding-left: 1.2rem;
+    }
+
+    .prose-custom li {
+      margin-bottom: 0.55rem;
+      line-height: 1.75;
+    }
+
+    .prose-custom strong {
+      color: var(--slate-900);
+    }
+
+    .prose-custom a {
+      color: var(--sky-600);
+      text-decoration: none;
+    }
+
+    .prose-custom a:hover,
+    .prose-custom a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 9999px;
+      padding: 0.35rem 0.75rem;
+    }
+
+    .badge-sky {
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    .mini-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--slate-200);
+      border-radius: 0.9rem;
+      padding: 1rem;
+    }
+
+    .callout {
+      border-left: 4px solid var(--sky-500);
+      background: #f0f9ff;
+      padding: 1rem 1rem 1rem 1.1rem;
+      border-radius: 0.8rem;
+      margin: 1.2rem 0;
+    }
+
+    .callout-warning {
+      border-left-color: var(--amber-500);
+      background: #fff7ed;
+    }
+
+    .callout-danger {
+      border-left-color: var(--rose-500);
+      background: #fff1f2;
+    }
+
+    .callout-success {
+      border-left-color: var(--emerald-500);
+      background: #ecfdf5;
+    }
+
+    .figure-box {
+      background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+      border: 1px solid var(--slate-200);
+      border-radius: 1rem;
+      padding: 1rem;
+      margin: 1.2rem 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+    }
+
+    table.guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 0.9rem;
+      overflow: hidden;
+    }
+
+    .guide-table th,
+    .guide-table td {
+      text-align: left;
+      padding: 0.95rem 1rem;
+      border-bottom: 1px solid var(--slate-200);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .guide-table th {
+      background: var(--slate-100);
+      color: var(--slate-900);
+      font-size: 0.95rem;
+    }
+
+    .checklist li::marker {
+      color: var(--sky-600);
+    }
+
+    details.faq {
+      border: 1px solid var(--slate-200);
+      border-radius: 0.9rem;
+      background: white;
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--slate-900);
+      list-style: none;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .footnote {
+      font-size: 0.95rem;
+      color: var(--slate-500);
+    }
+
+    @media (max-width: 1023px) {
+      .sticky-nav {
+        position: static;
+        max-height: none;
+        overflow: visible;
+      }
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-700">
+<body>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido</a>
 
-    <!-- Header y Navegación -->
-    <header class="bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-slate-900">GuíaCanina</a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="guia.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">La Guía</a>
-                <a href="blog.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Blog Científico</a>
-                <a href="servicios.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Mis Servicios</a>
-                <a href="sobre-mi.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Sobre Mí</a>
-                <a href="apoyame.html" class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 font-semibold transition duration-300 shadow">Apoya el Proyecto</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-slate-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
-            </button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
-             <a href="guia.html" class="block text-slate-600 hover:text-sky-600 font-medium">La Guía</a>
-             <a href="blog.html" class="block text-slate-600 hover:text-sky-600 font-medium">Blog Científico</a>
-             <a href="servicios.html" class="block text-slate-600 hover:text-sky-600 font-medium">Mis Servicios</a>
-             <a href="sobre-mi.html" class="block text-slate-600 hover:text-sky-600 font-medium">Sobre Mí</a>
-             <a href="apoyame.html" class="block bg-emerald-500 text-white px-4 py-2 rounded-lg text-center font-semibold hover:bg-emerald-600">Apoya el Proyecto</a>
+  <header class="bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50 border-b border-slate-200">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-extrabold text-slate-900 tracking-tight">GuíaCanina</a>
+
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="guia.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">La Guía</a>
+        <a href="blog.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Blog Científico</a>
+        <a href="servicios.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Mis Servicios</a>
+        <a href="sobre-mi.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Sobre Mí</a>
+        <a href="apoyame.html" class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 font-semibold transition duration-300 shadow">Apoya el Proyecto</a>
+      </div>
+
+      <button id="mobile-menu-button" class="md:hidden text-slate-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3 border-t border-slate-200">
+      <a href="guia.html" class="block text-slate-600 hover:text-sky-600 font-medium pt-3">La Guía</a>
+      <a href="blog.html" class="block text-slate-600 hover:text-sky-600 font-medium">Blog Científico</a>
+      <a href="servicios.html" class="block text-slate-600 hover:text-sky-600 font-medium">Mis Servicios</a>
+      <a href="sobre-mi.html" class="block text-slate-600 hover:text-sky-600 font-medium">Sobre Mí</a>
+      <a href="apoyame.html" class="block bg-emerald-500 text-white px-4 py-2 rounded-lg text-center font-semibold hover:bg-emerald-600">Apoya el Proyecto</a>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="container mx-auto px-6 py-10 md:py-14">
+    <section class="hero-grid card p-8 md:p-10 mb-10">
+      <div class="grid lg:grid-cols-[1.5fr_.9fr] gap-8 items-start">
+        <div>
+          <span class="badge badge-sky mb-4">Guía extensa · modificación de conducta</span>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4">Guía para la Solución de Problemas Comunes</h1>
+          <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl">
+            Entiende el porqué detrás de los comportamientos desafiantes y aprende estrategias amables, seguras y funcionales para ayudar a tu perro de verdad.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#introduccion" class="inline-flex items-center rounded-lg bg-slate-900 px-5 py-3 text-white font-semibold hover:bg-slate-800">Empezar la guía</a>
+            <a href="#cuando-pedir-ayuda" class="inline-flex items-center rounded-lg border border-slate-300 px-5 py-3 text-slate-700 font-semibold hover:bg-white">Cuándo pedir ayuda</a>
+          </div>
         </div>
-    </header>
 
-    <main class="container mx-auto px-6 py-12 md:py-16">
-        <div class="flex flex-col lg:flex-row gap-12">
-            <!-- Columna de Navegación Izquierda (Sticky) -->
-            <aside class="lg:w-1/4">
-                <div class="sticky-nav">
-                    <h3 class="text-lg font-bold text-slate-900 mb-4">En esta guía</h3>
-                    <nav>
-                        <ul class="space-y-3">
-                            <li><a href="#introduccion" class="font-medium text-slate-600 hover:text-sky-600">Introducción: Un Cambio de Perspectiva</a></li>
-                            <li><a href="#pilares" class="font-medium text-slate-600 hover:text-sky-600">1. Los Pilares de la Modificación de Conducta</a>
-                                <ul class="ml-4 mt-2 space-y-2 text-sm">
-                                    <li><a href="#pilares-gestion" class="text-slate-500 hover:text-sky-600">Gestión del Entorno</a></li>
-                                    <li><a href="#pilares-umbral" class="text-slate-500 hover:text-sky-600">Trabajar Bajo el Umbral</a></li>
-                                    <li><a href="#pilares-ccds" class="text-slate-500 hover:text-sky-600">CC/DS: La Fórmula Mágica</a></li>
-                                </ul>
-                            </li>
-                             <li><a href="#ansiedad-separacion" class="font-medium text-slate-600 hover:text-sky-600">2. Ansiedad por Separación</a></li>
-                            <li><a href="#reactividad" class="font-medium text-slate-600 hover:text-sky-600">3. Reactividad con Correa</a></li>
-                            <li><a href="#proteccion-recursos" class="font-medium text-slate-600 hover:text-sky-600">4. Protección de Recursos</a></li>
-                            <li><a href="#cuando-pedir-ayuda" class="font-medium text-slate-600 hover:text-sky-600">5. Cuándo Pedir Ayuda Profesional</a></li>
-                            <li><a href="#conclusion" class="font-medium text-slate-600 hover:text-sky-600">Conclusión: El Camino es la Paciencia</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </aside>
-
-            <!-- Columna de Contenido Principal -->
-            <article class="lg:w-3/4 bg-white p-8 md:p-12 rounded-xl shadow-lg prose prose-lg max-w-none">
-                
-                <header>
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Guía para la Solución de Problemas Comunes</h1>
-                    <p class="text-xl text-slate-600">Entiende el porqué detrás de los comportamientos desafiantes y aprende las estrategias amables y efectivas para ayudar a tu perro.</p>
-                </header>
-                
-                <hr class="my-8">
-
-                <section id="introduccion">
-                    <h2>Introducción: Un Cambio de Perspectiva</h2>
-                    <p>Cuando un perro ladra a otros perros, destruye cosas al quedarse solo o gruñe cerca de su comida, no está siendo "malo", "dominante" o "rencoroso". Está comunicando de la única forma que sabe que está experimentando una emoción abrumadora: miedo, estrés, ansiedad o frustración. Nuestro primer paso, y el más importante, es cambiar nuestra perspectiva: no vemos un "problema que hay que eliminar", sino a un "perro con un problema que necesita nuestra ayuda".</p>
-                    <p>Esta guía te proporcionará las herramientas y los conocimientos para convertirte en el apoyo que tu perro necesita, abordando la raíz emocional del comportamiento y no solo el síntoma visible.</p>
-                </section>
-
-                <section id="pilares">
-                    <h2>1. Los Pilares de la Modificación de Conducta</h2>
-                    <p>Antes de abordar problemas específicos, debemos entender los tres conceptos que forman la base de cualquier plan de modificación de conducta ético y efectivo.</p>
-
-                    <h3 id="pilares-gestion">A. Gestión del Entorno: El Arte de Prevenir</h3>
-                    <p>La gestión es tu herramienta más poderosa. Consiste en organizar el entorno para <strong>prevenir que el comportamiento no deseado ocurra</strong>. Cada vez que un perro "practica" un comportamiento (como ladrar a las visitas), la vía neuronal para esa reacción se fortalece. La gestión evita esa práctica.</p>
-                    <ul>
-                        <li><strong>Ejemplo para un perro reactivo:</strong> Pasear en horarios de poca afluencia, cruzar la calle para evitar otros perros.</li>
-                        <li><strong>Ejemplo para un perro destructor:</strong> No dejarlo solo con acceso a toda la casa, sino en una zona segura para perros.</li>
-                    </ul>
-                    <p><strong>La gestión no es la solución final, pero es el primer paso indispensable</strong> que reduce el estrés de todos y nos da el espacio para trabajar en la causa raíz.</p>
-
-                    <h3 id="pilares-umbral">B. Trabajar Bajo el Umbral (Threshold)</h3>
-                    <p>Imagina una línea invisible. Por debajo de esa línea, tu perro puede percibir un estímulo (ej: ver a otro perro a lo lejos) y, aunque esté alerta, todavía es capaz de pensar, aprender y tomar buenas decisiones. Por encima de esa línea, su cerebro emocional toma el control y solo puede reaccionar (ladrar, lanzarse, huir). Esa línea es su umbral.</p>
-                    <p><strong>Todo el aprendizaje efectivo ocurre por debajo del umbral.</strong> Nuestro trabajo es identificar a qué distancia o intensidad está ese umbral y asegurarnos de que nuestras sesiones de entrenamiento se mantengan siempre en la zona de aprendizaje, no en la zona de reacción.</p>
-                    
-                    <img src="https://placehold.co/800x300/e0f2fe/0c4a6e?text=Zona+de+Aprendizaje+vs+Zona+de+Reacci%C3%B3n" alt="Diagrama de umbral de reacción" class="rounded-lg shadow-md my-6">
-
-                    <h3 id="pilares-ccds">C. Contracondicionamiento y Desensibilización Sistemática (CC/DS)</h3>
-                    <p>Esta es la técnica principal para cambiar las respuestas emocionales.</p>
-                    <ul>
-                        <li><strong>Desensibilización Sistemática:</strong> Exponer al perro al estímulo que le preocupa de una forma tan gradual y a una intensidad tan baja (bajo el umbral) que no provoque la respuesta de miedo. Empezamos con el perro lejos, luego un poco más cerca, etc.</li>
-                        <li><strong>Contracondicionamiento:</strong> Es el proceso de cambiar la asociación emocional. Mientras el perro percibe el estímulo a un nivel bajo, lo asociamos con algo que le encanta (comida de alto valor, juego). El objetivo es que el perro aprenda que "ver a otro perro (antes daba miedo) ahora predice que llueven salchichas (¡genial!)".</li>
-                    </ul>
-                    <p>Juntas, estas técnicas le enseñan al perro a sentirse diferente respecto a lo que antes le causaba problemas.</p>
-                </section>
-                
-                <section id="ansiedad-separacion">
-                    <h2>2. Ansiedad por Separación</h2>
-                    <p>No es un problema de "mal comportamiento", sino un ataque de pánico genuino que el perro sufre cuando se queda solo. Los síntomas incluyen vocalizaciones (ladridos, aullidos), destrucción (especialmente en puertas y ventanas) y eliminación inadecuada.</p>
-                    <h4>Plan de Acción:</h4>
-                    <ol>
-                        <li><strong>No dejarlo solo (temporalmente):</strong> El primer paso es suspender las ausencias que le provocan pánico. Esto es crucial y puede requerir la ayuda de guarderías, paseadores o amigos. Cada vez que sufre un ataque de pánico, el problema se refuerza.</li>
-                        <li><strong>Crear un "Refugio Seguro":</strong> Acondicionar un espacio donde el perro se sienta cómodo y seguro (una habitación, un parque de juegos) con su cama, juguetes interactivos, etc.</li>
-                        <li><strong>Desensibilización a las Señales de Salida:</strong> Los perros aprenden a anticipar nuestra salida (coger las llaves, ponerse los zapatos). Debemos romper esa asociación. Coge las llaves y siéntate en el sofá. Ponte los zapatos y no te vayas. Repite esto muchas veces al día hasta que esas señales ya no provoquen ansiedad.</li>
-                        <li><strong>Práctica de Ausencias Graduales:</strong> Empieza con ausencias increíblemente cortas (incluso 1 segundo). Sal por la puerta y vuelve a entrar inmediatamente (siempre que esté tranquilo). Gradualmente, aumenta la duración: 5 segundos, 10 segundos, 30 segundos, 2 minutos... El objetivo es volver siempre ANTES de que entre en pánico.</li>
-                    </ol>
-                    <div class="callout"><p><strong>Importante:</strong> La ansiedad por separación es un trastorno complejo. Este plan es una guía inicial, pero a menudo requiere el acompañamiento de un profesional certificado y, en algunos casos, apoyo veterinario.</p></div>
-                </section>
-
-                <section id="reactividad">
-                    <h2>3. Reactividad con Correa</h2>
-                    <p>La reactividad (ladrar, lanzarse, gruñir) hacia otros perros, personas u objetos mientras pasea con correa suele tener su origen en el miedo o la frustración. La correa elimina la opción de huir, por lo que el perro siente que su única defensa es "explotar" para que la amenaza se aleje.</p>
-                    <h4>Plan de Acción:</h4>
-                    <ol>
-                        <li><strong>Gestión Rigurosa:</strong> Identifica la distancia a la que tu perro reacciona (su umbral) y mantente siempre más lejos. Usa la vista para anticipar y evitar encuentros frontales.</li>
-                        <li><strong>Técnica "Mira Eso" (Look At That - LAT):</strong> A una distancia segura, en cuanto tu perro mire al otro perro (el "disparador"), márcalo con un "sí" o un clicker y dale un premio de altísimo valor. El objetivo es que el perro te mire esperando su premio tras ver al disparador. Esto cambia la asociación de "veo un perro -> ¡pánico!" a "veo un perro -> miro a mi humano -> ¡consigo pollo!".</li>
-                        <li><strong>Ofrece una Alternativa:</strong> En lugar de esperar a que reaccione, dale algo que hacer. Pídele que se siente y te mire, o lanza premios al suelo para que olfatee (una conducta naturalmente calmante) mientras el otro perro pasa a una distancia segura.</li>
-                    </ol>
-                </section>
-
-                <section id="proteccion-recursos">
-                    <h2>4. Protección de Recursos (Resource Guarding)</h2>
-                    <p>Es un comportamiento normal en el reino animal. El perro percibe que un humano u otro animal es una amenaza para un recurso valioso (comida, juguete, cama) y realiza comportamientos para mantenerlo a salvo (congelarse, gruñir, morder).</p>
-                    <div class="callout"><p><strong>¡Nunca castigues un gruñido!</strong> Es una comunicación vital. Si castigas el gruñido, no eliminas el miedo, solo eliminas la advertencia. La próxima vez, el perro puede morder sin previo aviso.</p></div>
-                    <h4>Plan de Acción (para casos leves, los graves requieren profesional):</h4>
-                    <ol>
-                        <li><strong>Gestión:</strong> Dale al perro su espacio y no lo molestes cuando tenga recursos de alto valor. Dale de comer en una habitación separada.</li>
-                        <li><strong>El Juego del Intercambio:</strong> Enséñale que tu acercamiento no es una amenaza, sino una oportunidad. Mientras roe un hueso, acércate (sin invadir su espacio) y lanza un trozo de algo aún mejor (salchicha, queso). Repite hasta que tu presencia le genere una expectativa positiva.</li>
-                        <li><strong>Enseña "Suelta":</strong> Practica el intercambio con juguetes de menor valor hasta que la orden esté bien establecida antes de intentar usarla con objetos de alto valor.</li>
-                    </ol>
-                </section>
-                
-                <section id="cuando-pedir-ayuda">
-                    <h2>5. Cuándo Pedir Ayuda Profesional</h2>
-                    <p>Si bien esta guía te da herramientas sólidas, hay situaciones en las que la ayuda de un profesional cualificado es indispensable:</p>
-                    <ul>
-                        <li>Si hay cualquier nivel de agresión (gruñidos, lanzamientos, mordidas).</li>
-                        <li>Si el problema es severo (ansiedad por separación incapacitante).</li>
-                        <li>Si no ves progreso o te sientes abrumado.</li>
-                    </ul>
-                    <p>Busca siempre a educadores que trabajen con métodos basados en el refuerzo positivo y que tengan certificaciones reconocidas.</p>
-                </section>
-
-                <section id="conclusion">
-                    <h2>Conclusión: El Camino es la Paciencia</h2>
-                    <p>La modificación de conducta no es un proceso rápido ni lineal. Habrá días buenos y días malos. Lo más importante es recordar que estás ayudando a tu perro a superar sus miedos y a sentirse más seguro en el mundo. Cada vez que gestionas el entorno para evitar una reacción, estás ganando. Cada sesión de entrenamiento exitosa bajo el umbral es una victoria.</p>
-                    <p>Celebra los pequeños progresos, sé amable contigo mismo y con tu perro, y nunca subestimes el poder de un vínculo basado en la confianza y la comprensión mutua.</p>
-                </section>
-
-            </article>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
+          <div class="mini-card">
+            <p class="text-sm uppercase tracking-wide text-slate-500 font-semibold">Idea clave</p>
+            <p class="mt-2 text-slate-900 font-bold text-lg">No hay un “perro malo”; hay un perro que no puede manejar bien una situación</p>
+          </div>
+          <div class="mini-card">
+            <p class="text-sm uppercase tracking-wide text-slate-500 font-semibold">Base del trabajo</p>
+            <p class="mt-2 text-slate-900 font-bold text-lg">Gestión + distancia + aprendizaje subumbral</p>
+          </div>
+          <div class="mini-card">
+            <p class="text-sm uppercase tracking-wide text-slate-500 font-semibold">Error frecuente</p>
+            <p class="mt-2 text-slate-900 font-bold text-lg">Intentar corregir el síntoma sin cambiar emoción, contexto y práctica</p>
+          </div>
         </div>
-    </main>
+      </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-800 text-slate-300">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">GuíaCanina</h3>
-                    <p class="text-sm">Conocimiento abierto, basado en ciencia y empatía, para mejorar la vida de los perros.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">Explora</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="guia.html" class="hover:text-white">La Guía Completa</a></li>
-                        <li><a href="blog.html" class="hover:text-white">Blog Científico</a></li>
-                        <li><a href="servicios.html" class="hover:text-white">Mis Servicios</a></li>
-                        <li><a href="sobre-mi.html" class="hover:text-white">Sobre Mí</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">Apoya</h3>
-                     <ul class="space-y-2 text-sm">
-                        <li><a href="apoyame.html" class="hover:text-white">Haz una Donación</a></li>
-                        <li><a href="#" class="hover:text-white">Aviso Legal</a></li>
-                        <li><a href="#" class="hover:text-white">Política de Privacidad</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">Sígueme</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" aria-label="Instagram"><svg class="h-6 w-6 hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.58 0 9.22.01 8.16.06c-1.15.05-1.94.22-2.6.47a6.9 6.9 0 00-2.18 1.62A6.9 6.9 0 001.74 6.3c-.25.66-.42 1.45-.47 2.6C1.21 9.94 1.19 10.3 1.19 12.72s.02 2.78.07 3.84c.05 1.15.22 1.94.47 2.6a6.9 6.9 0 001.62 2.18 6.9 6.9 0 002.18 1.62c.66.25 1.45.42 2.6.47 1.06.05 1.42.06 3.84.06s2.78-.01 3.84-.06c1.15-.05 1.94-.22 2.6-.47a6.9 6.9 0 002.18-1.62 6.9 6.9 0 001.62-2.18c.25-.66.42-1.45.47-2.6.05-1.06.06-1.42.06-3.84s-.01-2.78-.06-3.84c-.05-1.15-.22-1.94-.47-2.6A6.9 6.9 0 0021.5 4.48a6.9 6.9 0 00-2.18-1.62c-.66-.25-1.45-.42-2.6-.47C15.56.01 15.2 0 12.72 0H12z" clip-rule="evenodd" /><path d="M12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zM12 15a3 3 0 110-6 3 3 0 010 6z" /><path d="M16.862 6.225a1.238 1.238 0 100-2.475 1.238 1.238 0 000 2.475z" /></svg></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-slate-700 mt-8 pt-6 text-center text-sm">
-                <p>&copy; 2024 GuíaCanina. Un proyecto de [Tu Nombre].</p>
-            </div>
+    <div class="flex flex-col lg:flex-row gap-10">
+      <aside class="lg:w-[28%] xl:w-[24%]">
+        <div class="sticky-nav card p-5">
+          <h2 class="text-lg font-extrabold text-slate-900 mb-4">En esta guía</h2>
+          <nav aria-label="Tabla de contenidos">
+            <ul class="space-y-2 text-sm">
+              <li><a href="#introduccion" class="toc-link text-slate-600 hover:text-sky-600">Introducción: un cambio de perspectiva</a></li>
+              <li><a href="#pilares" class="toc-link text-slate-600 hover:text-sky-600">1. Pilares de la modificación de conducta</a></li>
+              <li><a href="#pilares-gestion" class="toc-link text-slate-500 hover:text-sky-600 ml-3">Gestión del entorno</a></li>
+              <li><a href="#pilares-umbral" class="toc-link text-slate-500 hover:text-sky-600 ml-3">Trabajar bajo el umbral</a></li>
+              <li><a href="#pilares-ccds" class="toc-link text-slate-500 hover:text-sky-600 ml-3">CC/DS</a></li>
+              <li><a href="#ansiedad-separacion" class="toc-link text-slate-600 hover:text-sky-600">2. Ansiedad por separación</a></li>
+              <li><a href="#reactividad" class="toc-link text-slate-600 hover:text-sky-600">3. Reactividad con correa</a></li>
+              <li><a href="#proteccion-recursos" class="toc-link text-slate-600 hover:text-sky-600">4. Protección de recursos</a></li>
+              <li><a href="#cuando-pedir-ayuda" class="toc-link text-slate-600 hover:text-sky-600">5. Cuándo pedir ayuda profesional</a></li>
+              <li><a href="#faq" class="toc-link text-slate-600 hover:text-sky-600">6. Preguntas frecuentes</a></li>
+              <li><a href="#conclusion" class="toc-link text-slate-600 hover:text-sky-600">Conclusión</a></li>
+            </ul>
+          </nav>
         </div>
-    </footer>
+      </aside>
 
-    <script>
-        // Script para el menú móvil
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+      <article class="lg:w-[72%] xl:w-[76%] card p-7 md:p-10 prose-custom max-w-none">
+        <section id="introduccion" class="section-anchor">
+          <h2>Introducción: un cambio de perspectiva</h2>
+          <p>
+            Cuando un perro ladra a otros perros, destruye cosas al quedarse solo o gruñe cerca de su comida, no está siendo “malo”, “dominante” ni “rencoroso”. Está usando conductas que, desde su historia y su estado emocional, le parecen la mejor forma disponible de manejar miedo, estrés, frustración, anticipación o incertidumbre.
+          </p>
+          <p>
+            El cambio de perspectiva más importante es este: <strong>no estamos intentando apagar un comportamiento molesto sin más; estamos ayudando a un perro que no sabe manejar bien una situación</strong>. Si solo intentamos suprimir el síntoma visible, corremos el riesgo de dejar intacta la emoción subyacente o incluso empeorarla.
+          </p>
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+          <div class="callout">
+            <p><strong>Idea central:</strong> el objetivo real no es “que deje de hacerlo”, sino que el perro ya no necesite hacerlo para sentirse a salvo o para manejar lo que le ocurre.</p>
+          </div>
+        </section>
+
+        <section id="pilares" class="section-anchor">
+          <h2>1. Los pilares de la modificación de conducta</h2>
+          <p>
+            Antes de abordar problemas específicos, conviene entender tres bases que sostienen cualquier plan serio de trabajo conductual.
+          </p>
+
+          <h3 id="pilares-gestion" class="section-anchor">A. Gestión del entorno: el arte de prevenir</h3>
+          <p>
+            La gestión consiste en organizar el entorno para <strong>reducir la probabilidad de que el problema ocurra</strong>. No es rendirse ni evitar para siempre; es impedir práctica innecesaria del comportamiento mientras construyes alternativas mejores.
+          </p>
+          <ul class="checklist">
+            <li><strong>Perro reactivo:</strong> caminar en horarios tranquilos, usar rutas con más espacio, cruzar la calle antes de saturarlo.</li>
+            <li><strong>Ansiedad por separación:</strong> no dejarlo solo más tiempo del que puede tolerar sin entrar en pánico.</li>
+            <li><strong>Protección de recursos:</strong> separar al perro cuando come y evitar invasiones sobre objetos de alto valor.</li>
+          </ul>
+          <p>
+            Cada vez que el perro repite la conducta problemática, esa respuesta se practica y se consolida. Por eso la gestión no es secundaria: es una parte estructural del tratamiento.
+          </p>
+
+          <h3 id="pilares-umbral" class="section-anchor">B. Trabajar bajo el umbral</h3>
+          <p>
+            El umbral es el punto a partir del cual la activación emocional supera la capacidad del perro para procesar, responder con flexibilidad y aprender. Por debajo del umbral, puede observar, pensar, oler, comer, apartarse o responder a señales. Por encima del umbral, su conducta se vuelve más reactiva, rígida o explosiva.
+          </p>
+
+          <div class="figure-box">
+            <p class="font-bold text-slate-900 mb-2">Lectura práctica del umbral</p>
+            <p class="mb-0">Si el perro ya está ladrando, embistiendo, congelándose con rigidez extrema, jadeando de forma intensa o no puede responder a nada sencillo, probablemente estás demasiado cerca, demasiado tiempo o en un contexto demasiado difícil.</p>
+          </div>
+
+          <p>
+            El aprendizaje útil ocurre por debajo del umbral. El trabajo real es identificar a qué distancia, intensidad o duración el perro todavía puede funcionar y empezar desde ahí.
+          </p>
+
+          <h3 id="pilares-ccds" class="section-anchor">C. Contracondicionamiento y desensibilización sistemática (CC/DS)</h3>
+          <p>
+            Esta combinación es una base clásica de la modificación de conducta:
+          </p>
+          <ul>
+            <li><strong>Desensibilización sistemática:</strong> presentar el estímulo a una intensidad suficientemente baja para no disparar la reacción completa.</li>
+            <li><strong>Contracondicionamiento:</strong> cambiar la asociación emocional del estímulo, vinculándolo con algo positivo o funcionalmente seguro.</li>
+          </ul>
+          <p>
+            En términos simples, buscamos que el perro pase de “esto me amenaza” a “esto predice algo bueno / manejable / seguro”.
+          </p>
+
+          <div class="callout-success">
+            <p><strong>Resumen:</strong> primero previenes, luego regulas dificultad, después cambias la emoción y enseñas nuevas respuestas.</p>
+          </div>
+        </section>
+
+        <section id="ansiedad-separacion" class="section-anchor">
+          <h2>2. Ansiedad por separación</h2>
+          <p>
+            La ansiedad por separación no es un acto de venganza ni una simple “mala costumbre”. En muchos casos se parece más a una respuesta de pánico cuando el perro se queda solo o pierde acceso a la figura de apego.
+          </p>
+          <p>
+            Puede incluir vocalización intensa, destrucción, salivación excesiva, eliminación, hiperactividad previa a la salida o incapacidad para descansar.
+          </p>
+
+          <h3>Plan base de acción</h3>
+          <ol>
+            <li><strong>Suspender o reducir ausencias problemáticas:</strong> mientras más veces el perro entra en pánico, más se refuerza el patrón.</li>
+            <li><strong>Registrar el punto de ruptura:</strong> cuánto tarda en activarse realmente. No lo adivines; mídelo si es posible.</li>
+            <li><strong>Romper señales de salida:</strong> coger llaves, ponerse zapatos, abrir puerta, moverse hacia la salida sin marcharte.</li>
+            <li><strong>Practicar ausencias microscópicas:</strong> volver antes de que el perro entre en malestar relevante.</li>
+            <li><strong>Construir un contexto seguro:</strong> zona de descanso, enriquecimiento adecuado, rutina predecible.</li>
+          </ol>
+
+          <div class="callout-warning">
+            <p><strong>Cuidado:</strong> dejar al perro “hasta que se acostumbre” suele empeorar el problema si lo estás exponiendo por encima de su tolerancia real.</p>
+          </div>
+
+          <div class="table-wrap">
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>Señal</th>
+                  <th>Interpretación posible</th>
+                  <th>Respuesta útil</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Se activa al coger llaves</td>
+                  <td>Asociación anticipatoria fuerte</td>
+                  <td>Desensibilizar señales previas a la salida</td>
+                </tr>
+                <tr>
+                  <td>Ladra o aúlla tras unos segundos</td>
+                  <td>Ausencia ya demasiado larga</td>
+                  <td>Reducir duración inicial de trabajo</td>
+                </tr>
+                <tr>
+                  <td>Destruye puerta o ventana</td>
+                  <td>Intento de reunión / pánico</td>
+                  <td>Apoyo profesional recomendado</td>
+                </tr>
+                <tr>
+                  <td>No come ni interactúa</td>
+                  <td>Estrés demasiado alto</td>
+                  <td>Bajar exigencia y revisar plan</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout-danger">
+            <p><strong>Importante:</strong> la ansiedad por separación severa suele requerir acompañamiento profesional y, en algunos casos, apoyo veterinario.</p>
+          </div>
+        </section>
+
+        <section id="reactividad" class="section-anchor">
+          <h2>3. Reactividad con correa</h2>
+          <p>
+            La reactividad con correa suele manifestarse como ladridos, gruñidos, tensión, embestidas o fijación intensa hacia perros, personas, bicicletas u otros estímulos. En muchos casos hay miedo, frustración o conflicto social detrás, no “maldad”.
+          </p>
+          <p>
+            La correa limita opciones: el perro no puede alejarse con libertad, explorar el ángulo que querría o gestionar la distancia por su cuenta. Por eso, la conducta visible en correa no siempre refleja cómo actuaría suelto.
+          </p>
+
+          <h3>Plan base de trabajo</h3>
+          <ol>
+            <li><strong>Determina distancia funcional:</strong> trabaja donde el perro aún puede mirar sin explotar.</li>
+            <li><strong>Anticipa y gira antes:</strong> no esperes a tener el estímulo encima.</li>
+            <li><strong>Reforza observación calmada o reorientación:</strong> mirar el estímulo y volver contigo, o tolerar presencia sin escalar.</li>
+            <li><strong>Usa trayectorias curvas y espacio:</strong> evita encuentros frontales y estrechos.</li>
+            <li><strong>Reduce acumulación de estrés:</strong> un paseo tras otro sobrecargado dificulta todo el trabajo.</li>
+          </ol>
+
+          <h3>Errores frecuentes en reactividad</h3>
+          <ul>
+            <li>Acercarse “para que se acostumbre”.</li>
+            <li>Tensar la correa justo cuando aparece el estímulo.</li>
+            <li>Esperar a que reaccione para intervenir.</li>
+            <li>Trabajar demasiado cerca por querer avanzar rápido.</li>
+            <li>Confundir silencio congelado con calma real.</li>
+          </ul>
+
+          <div class="callout">
+            <p><strong>Regla útil:</strong> si dudas entre acercarte o dar más espacio, en la mayoría de casos dar más espacio es la mejor decisión.</p>
+          </div>
+        </section>
+
+        <section id="proteccion-recursos" class="section-anchor">
+          <h2>4. Protección de recursos</h2>
+          <p>
+            La protección de recursos es una conducta normal desde el punto de vista biológico. El perro percibe que un recurso valioso —comida, juguete, cama, hueso, espacio o incluso persona— podría serle quitado y responde para conservarlo.
+          </p>
+          <p>
+            Las señales pueden ir desde inmovilidad, tensión y mirada dura hasta gruñido, desplazamiento o mordida. La intensidad no depende solo del recurso: también de historial, inseguridad, contexto y experiencia previa de pérdida.
+          </p>
+
+          <div class="callout-danger">
+            <p><strong>Nunca castigues el gruñido.</strong> El gruñido es información preventiva. Si lo suprimes sin resolver la emoción, el perro puede pasar a señales menos visibles o a morder más rápido.</p>
+          </div>
+
+          <h3>Plan base para casos leves o moderados</h3>
+          <ol>
+            <li><strong>Gestiona:</strong> evita invadirlo mientras consume recursos valiosos.</li>
+            <li><strong>Construye asociación positiva:</strong> tu acercamiento debe predecir mejora, no pérdida.</li>
+            <li><strong>Practica intercambios reales:</strong> entregar algo mejor a cambio, no arrebatar.</li>
+            <li><strong>No hagas pruebas innecesarias:</strong> provocar para “ver si ya se le pasó” suele ser contraproducente.</li>
+          </ol>
+
+          <h3>Ejemplo funcional de trabajo</h3>
+          <p>
+            Si el perro tiene un objeto moderadamente valioso, puedes acercarte a distancia segura, lanzar algo mejor y retirarte. El mensaje no es “vengo a quitarte”, sino “mi presencia mejora la situación”.
+          </p>
+        </section>
+
+        <section id="cuando-pedir-ayuda" class="section-anchor">
+          <h2>5. Cuándo pedir ayuda profesional</h2>
+          <p>
+            Algunas situaciones no deberían trabajarse en solitario, especialmente si hay riesgo, historia compleja o alta carga emocional.
+          </p>
+          <ul class="checklist">
+            <li>Si hay gruñidos, intentos de mordida o mordidas.</li>
+            <li>Si la ansiedad por separación es intensa o incapacitante.</li>
+            <li>Si la reactividad empeora, generaliza o te sobrepasa.</li>
+            <li>Si sospechas dolor o problema médico asociado.</li>
+            <li>Si no logras mantener al perro por debajo del umbral.</li>
+          </ul>
+
+          <p>
+            Busca profesionales que trabajen con métodos basados en bienestar, refuerzo positivo, manejo ético y comprensión funcional de la conducta.
+          </p>
+        </section>
+
+        <section id="faq" class="section-anchor">
+          <h2>6. Preguntas frecuentes</h2>
+
+          <details class="faq">
+            <summary>¿Ignorar el problema hará que desaparezca solo?</summary>
+            <p class="mt-3 mb-0">Normalmente no. Muchos problemas empeoran con la práctica repetida y con el estrés acumulado.</p>
+          </details>
+
+          <details class="faq">
+            <summary>¿Castigar la reacción la elimina?</summary>
+            <p class="mt-3 mb-0">Puede suprimir parte de la expresión visible, pero no necesariamente la emoción subyacente. A veces incluso la agrava.</p>
+          </details>
+
+          <details class="faq">
+            <summary>¿Cuánto tarda una modificación de conducta?</summary>
+            <p class="mt-3 mb-0">Depende del problema, la historia, la constancia, el entorno y la gravedad. No suele ser un proceso lineal ni rápido.</p>
+          </details>
+
+          <details class="faq">
+            <summary>¿Mi perro mejora si solo lo canso más?</summary>
+            <p class="mt-3 mb-0">El ejercicio puede ayudar, pero no sustituye el trabajo emocional, la gestión ni la enseñanza. Un perro agotado no es automáticamente un perro regulado.</p>
+          </details>
+
+          <details class="faq">
+            <summary>¿Evitar estímulos no empeora todo?</summary>
+            <p class="mt-3 mb-0">Evitar de forma estratégica no es rendirse. Es crear condiciones donde el perro pueda aprender sin sobrepasarse.</p>
+          </details>
+        </section>
+
+        <section id="conclusion" class="section-anchor">
+          <h2>Conclusión: el camino es la paciencia</h2>
+          <p>
+            La modificación de conducta no suele ser rápida ni perfectamente lineal. Habrá avances, retrocesos y días grises. Eso no significa que el proceso esté fallando. Significa que estás trabajando con emoción, aprendizaje y biología real.
+          </p>
+          <p>
+            Cada vez que reduces exposición innecesaria, respetas el umbral, previenes práctica del problema y creas experiencias mejores, estás construyendo cambio.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-4 mt-6">
+            <div class="mini-card">
+              <h3 class="!mt-0">Prevén</h3>
+              <p class="mb-0">Menos práctica del problema = mejor pronóstico.</p>
+            </div>
+            <div class="mini-card">
+              <h3 class="!mt-0">Observa</h3>
+              <p class="mb-0">Lee señales tempranas antes de la explosión.</p>
+            </div>
+            <div class="mini-card">
+              <h3 class="!mt-0">Acompaña</h3>
+              <p class="mb-0">Tu papel no es dominar la emoción, sino ayudar a regularla.</p>
+            </div>
+          </div>
+
+          <div class="callout-success">
+            <p><strong>Idea final:</strong> la mejora conductual real aparece cuando el perro deja de necesitar ciertas respuestas, no solo cuando aprende a reprimirlas.</p>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 mt-14">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">GuíaCanina</h3>
+          <p class="text-sm leading-7">Conocimiento abierto, basado en ciencia del comportamiento y bienestar animal.</p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">Explora</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="guia.html" class="hover:text-white">La Guía Completa</a></li>
+            <li><a href="blog.html" class="hover:text-white">Blog Científico</a></li>
+            <li><a href="servicios.html" class="hover:text-white">Mis Servicios</a></li>
+            <li><a href="sobre-mi.html" class="hover:text-white">Sobre Mí</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">Apoya</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="apoyame.html" class="hover:text-white">Haz una Donación</a></li>
+            <li><a href="#" class="hover:text-white">Aviso Legal</a></li>
+            <li><a href="#" class="hover:text-white">Política de Privacidad</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">Sígueme</h3>
+          <div class="flex space-x-4">
+            <a href="#" aria-label="Instagram">
+              <svg class="h-6 w-6 hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.58 0 9.22.01 8.16.06c-1.15.05-1.94.22-2.6.47a6.9 6.9 0 00-2.18 1.62A6.9 6.9 0 001.74 6.3c-.25.66-.42 1.45-.47 2.6C1.21 9.94 1.19 10.3 1.19 12.72s.02 2.78.07 3.84c.05 1.15.22 1.94.47 2.6a6.9 6.9 0 001.62 2.18 6.9 6.9 0 002.18 1.62c.66.25 1.45.42 2.6.47 1.06.05 1.42.06 3.84.06s2.78-.01 3.84-.06c1.15-.05 1.94-.22 2.6-.47a6.9 6.9 0 002.18-1.62 6.9 6.9 0 001.62-2.18c.25-.66.42-1.45.47-2.6.05-1.06.06-1.42.06-3.84s-.01-2.78-.06-3.84c-.05-1.15-.22-1.94-.47-2.6A6.9 6.9 0 0021.5 4.48a6.9 6.9 0 00-2.18-1.62c-.66-.25-1.45-.42-2.6-.47C15.56.01 15.2 0 12.72 0H12z" clip-rule="evenodd"></path>
+                <path d="M12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zM12 15a3 3 0 110-6 3 3 0 010 6z"></path>
+                <path d="M16.862 6.225a1.238 1.238 0 100-2.475 1.238 1.238 0 000 2.475z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-700 mt-8 pt-6 text-center text-sm">
+        <p>&copy; 2026 GuíaCanina. Un proyecto de Jenner Feijoo.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const progressBar = document.getElementById('progress-bar');
+    const tocLinks = [...document.querySelectorAll('.toc-link')];
+    const sections = [...document.querySelectorAll('.section-anchor')];
+
+    mobileMenuButton?.addEventListener('click', () => {
+      const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+      mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = `#${entry.target.id}`;
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === id);
         });
-    </script>
+      });
+    }, {
+      rootMargin: '-25% 0px -60% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
