@@ -1,4 +1,3 @@
-
 const allQuestions = [
     // --- LOTE 1 ---
     // --- Categoría 1.1: Orígenes y Domesticación ---
@@ -20,6 +19,7 @@ const allQuestions = [
             { text: "Un hocico más corto.", correct: false }
         ]
     },
+
     // --- Categoría 1.2: Lenguaje Canino y Señales de Calma ---
     {
         question: "Tu perro bosteza repetidamente mientras un niño se acerca a abrazarlo. ¿Qué es lo más probable que esté comunicando?",
@@ -57,7 +57,8 @@ const allQuestions = [
             { text: "Mostrar enfado hacia su tutor.", correct: false }
         ]
     },
-     // --- Categoría 1.3: Comportamiento Social y Jerarquía ---
+
+    // --- Categoría 1.3: Comportamiento Social y Jerarquía ---
     {
         question: "La 'reverencia de juego' (play bow) es una señal que los perros usan para:",
         answers: [
@@ -76,7 +77,8 @@ const allQuestions = [
             { text: "Reemplazada por la teoría del refuerzo negativo exclusivamente.", correct: false }
         ]
     },
-     // --- Categoría 1.4: Instintos y Comportamientos Innatos ---
+
+    // --- Categoría 1.4: Instintos y Comportamientos Innatos ---
     {
         question: "La secuencia depredadora completa incluye los siguientes pasos (en orden):",
         answers: [
@@ -95,6 +97,7 @@ const allQuestions = [
             { text: "El mordisco de agarre.", correct: false }
         ]
     },
+
     // --- Categoría 2.1: Principios Científicos del Aprendizaje ---
     {
         question: "Tu perro se emociona y saliva cada vez que coges su correa. Este es un ejemplo de:",
@@ -141,6 +144,7 @@ const allQuestions = [
             { text: "Generalización.", correct: false }
         ]
     },
+
     // --- Categoría 2.2: Técnicas y Herramientas de Entrenamiento Moderno ---
     {
         question: "El propósito principal del 'click' en el entrenamiento con clicker es:",
@@ -160,7 +164,8 @@ const allQuestions = [
             { text: "Esperar a que el perro haga el comportamiento completo por casualidad.", correct: false }
         ]
     },
-     // --- Categoría 2.3: Cognición Canina ---
+
+    // --- Categoría 2.3: Cognición Canina ---
     {
         question: "Estudios sobre cognición social han demostrado que los perros son especialmente buenos para:",
         answers: [
@@ -170,7 +175,8 @@ const allQuestions = [
             { text: "Contar objetos.", correct: false }
         ]
     },
-     // --- Categoría 3.1: Las Cinco Libertades del Bienestar Animal ---
+
+    // --- Categoría 3.1: Las Cinco Libertades del Bienestar Animal ---
     {
         question: "Una de las 'Cinco Libertades' del bienestar animal, adaptada a los perros, es 'Libre para expresar un comportamiento normal'. Un ejemplo práctico de esto sería:",
         answers: [
@@ -180,6 +186,7 @@ const allQuestions = [
             { text: "Tener siempre su cama en el mismo sitio.", correct: false }
         ]
     },
+
     // --- Categoría 3.2: Enriquecimiento Ambiental ---
     {
         question: "¿Cuál de las siguientes actividades es un excelente ejemplo de enriquecimiento mental y sensorial para un perro?",
@@ -229,6 +236,7 @@ const allQuestions = [
             { text: "Ganas de jugar.", correct: false }
         ]
     },
+
     // --- Categoría 3.4: Etapas de Vida ---
     {
         question: "El objetivo principal de la socialización en un cachorro es:",
@@ -266,6 +274,7 @@ const allQuestions = [
             { text: "Esperar a que el cachorro lo aprenda por sí mismo.", correct: false }
         ]
     },
+
     // --- Categoría 4.1: Fundamentos de la Modificación de Conducta ---
     {
         question: "El 'umbral' de un perro en una situación de estrés se refiere a:",
@@ -303,7 +312,8 @@ const allQuestions = [
             { text: "Dejar que el perro se enfrente a sus problemas sin ayuda.", correct: false }
         ]
     },
-     // --- Categoría 4.2: Problemas Comunes y Soluciones ---
+
+    // --- Categoría 4.2: Problemas Comunes y Soluciones ---
     {
         question: "Un signo clásico de la ansiedad por separación es:",
         answers: [
@@ -340,6 +350,7 @@ const allQuestions = [
             { text: "Sacarlo a pasear para distraerlo.", correct: false }
         ]
     },
+
     // --- Categoría 4.3: Agresividad y Reactividad ---
     {
         question: "La 'escalera de la agresión' es un concepto que ilustra que:",
@@ -359,6 +370,7 @@ const allQuestions = [
             { text: "La falta de inteligencia.", correct: false }
         ]
     },
+
     // --- Categoría 5.1: Introducción a los Deportes ---
     {
         question: "El 'Nosework' o trabajo de olfato es un deporte canino que se basa en:",
@@ -417,6 +429,7 @@ const allQuestions = [
             { text: "Ven más colores que los humanos.", correct: false }
         ]
     },
+
     // --- Categoría 5.3: Convivencia Humano-Perro ---
     {
         question: "La regla de oro para la interacción entre niños y perros es:",
@@ -454,6 +467,7 @@ const allQuestions = [
             { text: "El orden en el que se deben dar las comidas.", correct: false }
         ]
     },
+
     // --- Categoría 5.4: Primeros Auxilios y Seguridad ---
     {
         question: "Si tu perro sufre un golpe de calor, una medida de primeros auxilios inmediata es:",
@@ -482,7 +496,8 @@ const allQuestions = [
             { text: "Sobre la columna vertebral.", correct: false }
         ]
     },
-     // --- Categoría 6.1: Ética y Legislación ---
+
+    // --- Categoría 6.1: Ética y Legislación ---
     {
         question: "La 'Ley de Bienestar Animal' en muchos países establece que los tutores tienen la obligación de:",
         answers: [
@@ -510,6 +525,7 @@ const allQuestions = [
             { text: "Haber mordido a una persona, sin importar la raza.", correct: false }
         ]
     },
+
     // --- Categoría Adicional: Miscelánea ---
     {
         question: "La neotenia en perros se refiere a:",
@@ -595,6 +611,7 @@ const allQuestions = [
             { text: "El comportamiento se hereda únicamente de la madre.", correct: false }
         ]
     },
+
     // --- Categoría 2.4: Técnicas de Entrenamiento Avanzadas ---
     {
         question: "El 'encadenamiento hacia atrás' (back chaining) es una técnica útil para enseñar una secuencia de comportamientos. Consiste en:",
@@ -623,6 +640,7 @@ const allQuestions = [
             { text: "Aumentar la velocidad del perro en agility.", correct: false }
         ]
     },
+
     // --- Categoría 1.2 Extensión: Comunicación Avanzada ---
     {
         question: "La 'piloerección' (pelo erizado en el lomo) en un perro indica:",
@@ -642,6 +660,7 @@ const allQuestions = [
             { text: "Mostrar que está cansado.", correct: false }
         ]
     },
+
     // --- Categoría 3.3 Extensión: Salud y Nutrición Avanzada ---
     {
         question: "La 'torsión gástrica' es una emergencia veterinaria grave que afecta más comúnmente a:",
@@ -670,6 +689,7 @@ const allQuestions = [
             { text: "Exclusivo de los cachorros.", correct: false }
         ]
     },
+
     // --- Categoría 4.3 Extensión: Agresividad y Reactividad ---
     {
         question: "Un 'mordisco inhibido' se refiere a:",
@@ -689,6 +709,7 @@ const allQuestions = [
             { text: "Juega a morder de forma demasiado brusca.", correct: false }
         ]
     },
+
     // --- Categoría 5.1 Extensión: Deportes y Actividades ---
     {
         question: "El 'Rally Obedience' o 'Rally O' es un deporte canino que se diferencia de la obediencia tradicional en que:",
@@ -708,7 +729,8 @@ const allQuestions = [
             { text: "Siga un rastro de olor humano.", correct: false }
         ]
     },
-     // --- Categoría 6.1 Extensión: Ética y Ciencia ---
+
+    // --- Categoría 6.1 Extensión: Ética y Ciencia ---
     {
         question: "La 'Hipótesis del Ojo Cooperativo' sugiere que la esclerótica (el blanco del ojo) visible de los humanos evolucionó para:",
         answers: [
@@ -727,7 +749,8 @@ const allQuestions = [
             { text: "Se usan dos perros idénticos.", correct: false }
         ]
     },
-     // --- Miscelánea Avanzada ---
+
+    // --- Miscelánea Avanzada ---
     {
         question: "El 'órgano vomeronasal' o 'de Jacobson' en los perros está especializado en detectar:",
         answers: [
@@ -738,7 +761,7 @@ const allQuestions = [
         ]
     },
     {
-        question: "El concepto de ' indefensión aprendida' (learned helplessness) en un perro ocurre cuando:",
+        question: "El concepto de 'indefensión aprendida' (learned helplessness) en un perro ocurre cuando:",
         answers: [
             { text: "El perro aprende a pedir ayuda a su humano para todo.", correct: false },
             { text: "Un perro expuesto repetidamente a una situación aversiva de la que no puede escapar, aprende a no intentar escapar, incluso cuando se le da la oportunidad.", correct: true },
@@ -776,6 +799,7 @@ const allQuestions = [
             { text: "No tener ningún efecto a largo plazo.", correct: false }
         ]
     },
+
     // --- Categoría 2.6: Teoría del Aprendizaje Avanzada ---
     {
         question: "Cuando dejas de premiar un comportamiento que antes reforzabas, es común que el perro lo realice con más intensidad antes de que desaparezca. Esto se llama:",
@@ -795,6 +819,7 @@ const allQuestions = [
             { text: "Contracondicionamiento.", correct: false }
         ]
     },
+
     // --- Categoría 3.5: Salud y Prevención Avanzada ---
     {
         question: "La enfermedad de Lyme es una enfermedad zoonótica (transmisible a humanos) que es propagada principalmente por:",
@@ -823,6 +848,7 @@ const allQuestions = [
             { text: "Los ojos y los oídos.", correct: false }
         ]
     },
+
     // --- Categoría 3.4 Extensión: Desarrollo Avanzado ---
     {
         question: "Los cachorros suelen experimentar un segundo 'periodo de miedo' durante el cual pueden mostrarse temerosos ante cosas que antes no les afectaban. ¿Cuándo ocurre esto?",
@@ -833,6 +859,7 @@ const allQuestions = [
             { text: "En la vejez.", correct: false }
         ]
     },
+
     // --- Categoría 6.2: Figuras Clave y Estudios ---
     {
         question: "¿Qué científico es famoso por sus experimentos sobre condicionamiento clásico, usando campanas y la salivación de los perros?",
@@ -852,6 +879,7 @@ const allQuestions = [
             { text: "Turid Rugaas.", correct: false }
         ]
     },
+
     // --- Categoría 6.1 Extensión: Ética Avanzada ---
     {
         question: "El acrónimo LIMA, un estándar ético en el entrenamiento animal moderno, significa:",
@@ -862,6 +890,7 @@ const allQuestions = [
             { text: "Lógica Intuitiva de Modificación Animal.", correct: false }
         ]
     },
+
     // --- Categoría 1.5 Extensión: Genética Avanzada ---
     {
         question: "El estudio de cómo el ambiente y las experiencias de un individuo pueden afectar la expresión de sus genes sin cambiar el ADN se llama:",
@@ -872,7 +901,8 @@ const allQuestions = [
             { text: "Selección natural.", correct: false }
         ]
     },
-     // --- Miscelánea Final ---
+
+    // --- Miscelánea Final ---
     {
         question: "Un perro que exagera un gruñido o da un mordisco suave al aire durante el juego está usando:",
         answers: [
@@ -944,390 +974,403 @@ const allQuestions = [
             { text: "Cierto solo si el perro tiene una buena higiene dental.", correct: false },
             { text: "Falso, la boca humana es estéril.", correct: false }
         ]
-    }
+    },
+
     // --- LOTE 7 ---
-// --- Categoría 4.4: Análisis Funcional del Comportamiento ---
-{
-    question: "En un Análisis Funcional del Comportamiento (ABC), la 'A' se refiere a:",
-    answers: [
-        { text: "La Acción que realiza el perro.", correct: false },
-        { text: "El Antecedente: lo que ocurre justo antes del comportamiento.", correct: true },
-        { text: "La Amplitud o intensidad del comportamiento.", correct: false },
-        { text: "El Análisis final del caso.", correct: false }
-    ]
-},
-{
-    question: "¿Cuál es la función más probable de un comportamiento de ladrido que ocurre consistentemente solo cuando el perro ve a otros perros a través de la ventana y se detiene cuando estos se van?",
-    answers: [
-        { text: "Obtener atención del tutor.", correct: false },
-        { text: "Escape o evitación (el perro cree que sus ladridos hacen que el 'intruso' se vaya).", correct: true },
-        { text: "Acceso a un recurso tangible (un juguete).", correct: false },
-        { text: "Autoestimulación sensorial.", correct: false }
-    ]
-},
-// --- Categoría 2.7: Programas de Refuerzo Diferencial ---
-{
-    question: "Estás enseñando a tu perro a no saltar para saludar. Decides reforzarlo solo cuando mantiene las cuatro patas en el suelo. ¿Qué tipo de refuerzo diferencial estás usando?",
-    answers: [
-        { text: "Refuerzo Diferencial de Comportamientos Incompatibles (DRI).", correct: true },
-        { text: "Refuerzo Diferencial de Tasas Bajas de Respuesta (DRL).", correct: false },
-        { text: "Refuerzo Diferencial de Otros Comportamientos (DRO).", correct: false },
-        { text: "Refuerzo Diferencial de Comportamientos Alternativos (DRA).", correct: false }
-    ]
-},
-{
-    question: "El Refuerzo Diferencial de Otros Comportamientos (DRO) consiste en premiar al perro por:",
-    answers: [
-        { text: "Realizar un comportamiento específico que le pedimos.", correct: false },
-        { text: "La ausencia del comportamiento problemático durante un intervalo de tiempo determinado.", correct: true },
-        { text: "Hacer el comportamiento problemático menos veces que antes.", correct: false },
-        { text: "Hacer cualquier cosa excepto el comportamiento problemático y otro más.", correct: false }
-    ]
-},
-// --- Categoría 2.5 Extensión: Neurobiología del Aprendizaje ---
-{
-    question: "La estructura cerebral que juega un papel central en el procesamiento del miedo y la formación de memorias de miedo es:",
-    answers: [
-        { text: "El cerebelo.", correct: false },
-        { text: "El hipocampo.", correct: false },
-        { text: "La amígdala.", correct: true },
-        { text: "El córtex prefrontal.", correct: false }
-    ]
-},
-{
-    question: "El neurotransmisor asociado con la motivación, la recompensa y el comportamiento de búsqueda es principalmente:",
-    answers: [
-        { text: "La serotonina.", correct: false },
-        { text: "La dopamina.", correct: true },
-        { text: "El GABA.", correct: false },
-        { text: "La noradrenalina.", correct: false }
-    ]
-},
-// --- Categoría 3.5 Extensión: Salud y Comportamiento Avanzado ---
-{
-    question: "Un cambio repentino de comportamiento, como irritabilidad o letargo en un perro adulto, podría estar relacionado con una condición médica subyacente como:",
-    answers: [
-        { text: "El hipotiroidismo.", correct: true },
-        { text: "Una alergia estacional.", correct: false },
-        { text: "El crecimiento excesivo de las uñas.", correct: false },
-        { text: "La muda de pelo.", correct: false }
-    ]
-},
-{
-    question: "El Síndrome de Disfunción Cognitiva en perros senior es análogo a qué enfermedad en humanos?",
-    answers: [
-        { text: "La enfermedad de Parkinson.", correct: false },
-        { text: "La esclerosis múltiple.", correct: false },
-        { text: "La enfermedad de Alzheimer.", correct: true },
-        { text: "La diabetes.", correct: false }
-    ]
-},
-// --- Categoría 2.3 Extensión: Cognición Comparada ---
-{
-    question: "El 'aprendizaje por observación' en perros, donde aprenden una tarea viendo a otro perro o a un humano realizarla, se conoce como:",
-    answers: [
-        { text: "Facilitación social.", correct: false },
-        { text: "Efecto de audiencia.", correct: false },
-        { text: "El paradigma 'Do as I Do' (Haz lo que yo hago).", correct: true },
-        { text: "Condicionamiento vicario.", correct: false }
-    ]
-},
-{
-    question: "La capacidad de un perro para hacer inferencias por exclusión (ej. si debe buscar un objeto nuevo entre varios familiares, escogerá el que no conoce) sugiere:",
-    answers: [
-        { text: "Una memoria fotográfica.", correct: false },
-        { text: "Un proceso de razonamiento simple.", correct: true },
-        { text: "Una habilidad telepática.", correct: false },
-        { text: "Un comportamiento puramente aleatorio.", correct: false }
-    ]
-},
-// --- Categoría 1.5 Extensión: Genética del Comportamiento ---
-{
-    question: "Un 'Estudio de Asociación del Genoma Completo' (GWAS) en perros busca:",
-    answers: [
-        { text: "Crear nuevas razas de perros.", correct: false },
-        { text: "Identificar marcadores genéticos (SNPs) asociados con rasgos específicos, como un comportamiento o una enfermedad.", correct: true },
-        { text: "Determinar el árbol genealógico de un perro.", correct: false },
-        { text: "Clonar un perro con rasgos deseables.", correct: false }
-    ]
-},
-{
-    question: "La heredabilidad de un rasgo de comportamiento como la reactividad al ruido es de 0.4. Esto significa que:",
-    answers: [
-        { text: "El 40% de la reactividad del perro está causada por sus genes.", correct: false },
-        { text: "El 40% de la variación de la reactividad al ruido en la población estudiada puede atribuirse a la variación genética.", correct: true },
-        { text: "El ambiente no tiene ningún efecto sobre la reactividad al ruido.", correct: false },
-        { text: "El perro tiene un 40% de probabilidades de ser reactivo al ruido.", correct: false }
-    ]
-},
-// --- Categoría 6.1 Extensión: Metodología de la Investigación ---
-{
-    question: "En un estudio observacional del comportamiento canino, la 'fiabilidad interobservador' se refiere a:",
-    answers: [
-        { text: "La confianza que los observadores tienen en los perros.", correct: false },
-        { text: "El grado de acuerdo entre dos o más observadores independientes que registran el mismo comportamiento.", correct: true },
-        { text: "La habilidad de un observador para predecir el comportamiento del perro.", correct: false },
-        { text: "La calidad de las cámaras utilizadas para grabar.", correct: false }
-    ]
-},
-{
-    question: "Un 'etograma' es una herramienta fundamental en la etología que consiste en:",
-    answers: [
-        { text: "Un gráfico que muestra la popularidad de las razas de perros.", correct: false },
-        { text: "Un catálogo detallado y objetivo de los comportamientos específicos de una especie.", correct: true },
-        { text: "El historial médico completo de un animal.", correct: false },
-        { text: "Un programa de software para analizar el ADN canino.", correct: false }
-    ]
-},
-// --- Categoría 4.5: Protocolos de Modificación de Conducta Avanzados ---
-{
-    question: "El protocolo 'Constructional Aggression Treatment' (CAT) se diferencia de otros métodos en que:",
-    answers: [
-        { text: "Se enfoca en premiar al perro por estar tranquilo.", correct: false },
-        { text: "Utiliza el refuerzo negativo (la retirada del estímulo aversivo) para enseñar un comportamiento social alternativo a la agresión.", correct: true },
-        { text: "Se basa exclusivamente en el castigo positivo.", correct: false },
-        { text: "Solo se puede usar con cachorros.", correct: false }
-    ]
-},
-{
-    question: "El 'Protocolo de Relajación' de Karen Overall está diseñado para:",
-    answers: [
-        { text: "Enseñar al perro a relajarse en una variedad de situaciones y en presencia de estímulos de baja intensidad.", correct: true },
-        { text: "Hacer que el perro duerma más horas.", correct: false },
-        { text: "Enseñar trucos de obediencia de forma relajada.", correct: false },
-        { text: "Medicar a los perros para que estén tranquilos.", correct: false }
-    ]
-},
-{
-    question: "El protocolo 'Look at That' (LAT) de Leslie McDevitt es un juego diseñado para:",
-    answers: [
-        { text: "Enseñar al perro a ignorar sus estímulos aversivos.", correct: false },
-        { text: "Cambiar la respuesta emocional de un perro hacia un estímulo, enseñándole a mirarlo y luego a mirar al humano para recibir un premio.", correct: true },
-        { text: "Hacer que el perro ladre a los estímulos que le dan miedo.", correct: false },
-        { text: "Enseñar al perro a buscar objetos específicos.", correct: false }
-    ]
-},
-// --- Miscelánea Postdoctorado ---
-{
-    question: "La 'lateralización cerebral' en perros sugiere que, de forma similar a los humanos, el hemisferio derecho está más implicado en:",
-    answers: [
-        { text: "El procesamiento de rutinas y comportamientos familiares.", correct: false },
-        { text: "El control del apetito y la sed.", correct: false },
-        { text: "La respuesta a estímulos novedosos y la expresión de emociones intensas como el miedo.", correct: true },
-        { text: "La planificación a largo plazo.", correct: false }
-    ]
-},
-{
-    question: "El 'efecto audiencia' en el comportamiento canino se refiere a cómo un perro:",
-    answers: [
-        { text: "Solo obedece si hay un público mirando.", correct: false },
-        { text: "Cambia su comportamiento (ej. obedece más rápido) dependiendo de si su tutor está prestando atención o no.", correct: true },
-        { text: "Se distrae fácilmente con los ruidos del público.", correct: false },
-        { text: "Le gusta ver programas de televisión con perros.", correct: false }
-    ]
-},
-{
-    question: "El término 'Umwelt', popularizado por Jakob von Uexküll, se refiere al:",
-    answers: [
-        { text: "Entorno físico objetivo en el que vive un animal.", correct: false },
-        { text: "Mundo perceptivo y subjetivo de un animal, formado por lo que sus sentidos le permiten experimentar.", correct: true },
-        { text: "La jerarquía social dentro de un grupo de animales.", correct: false },
-        { text: "El código genético de una especie.", correct: false }
-    ]
-},
-,
-// --- LOTE 8 ---
-// --- Categoría 7.1: Psicofarmacología Conductual ---
-{
-    question: "La Fluoxetina (Prozac) es un fármaco a veces usado para tratar la ansiedad en perros. ¿A qué clase de medicamento pertenece?",
-    answers: [
-        { text: "Benzodiazepina.", correct: false },
-        { text: "Inhibidor Selectivo de la Recaptación de Serotonina (ISRS).", correct: true },
-        { text: "Antidepresivo Tricíclico (ATC).", correct: false },
-        { text: "Inhibidor de la Monoaminooxidasa (IMAO).", correct: false }
-    ]
-},
-{
-    question: "La Trazodona se utiliza a menudo en el ámbito veterinario como un ansiolítico de acción rápida para situaciones específicas (ej. viajes, tormentas) porque:",
-    answers: [
-        { text: "Aumenta los niveles de dopamina.", correct: false },
-        { text: "Actúa como antagonista de los receptores de serotonina e inhibidor de su recaptación (SARI).", correct: true },
-        { text: "Es un antibiótico de amplio espectro.", correct: false },
-        { text: "Bloquea los receptores del dolor.", correct: false }
-    ]
-},
-// --- Categoría 2.3 Extensión: Cognición Numérica y Espacial ---
-{
-    question: "Estudios sobre la cognición numérica en perros sugieren que pueden tener una habilidad rudimentaria para:",
-    answers: [
-        { text: "Realizar sumas y restas complejas.", correct: false },
-        { text: "Diferenciar entre pequeñas cantidades de objetos (subitizing) y estimar cantidades mayores.", correct: true },
-        { text: "Entender el concepto de cero.", correct: false },
-        { text: "Contar secuencialmente como un humano.", correct: false }
-    ]
-},
-{
-    question: "La habilidad de un perro para encontrar el camino más corto a un objetivo, incluso si implica desviarse momentáneamente de la línea recta, demuestra:",
-    answers: [
-        { text: "Una comprensión de la geometría euclidiana.", correct: false },
-        { text: "Cognición espacial y la capacidad de planificar rutas.", correct: true },
-        { text: "Un sentido del olfato superior.", correct: false },
-        { text: "Un comportamiento puramente aleatorio.", correct: false }
-    ]
-},
-// --- Categoría 3.5 Extensión: El Eje Intestino-Cerebro ---
-{
-    question: "La investigación sobre el 'eje intestino-cerebro' en perros sugiere que la salud del microbioma intestinal puede influir en:",
-    answers: [
-        { text: "El color del pelaje del perro.", correct: false },
-        { text: "La longitud de la cola.", correct: false },
-        { text: "Comportamientos relacionados con la ansiedad y el estrés.", correct: true },
-        { text: "La agudeza visual.", correct: false }
-    ]
-},
-{
-    question: "Los probióticos y prebióticos en la dieta de un perro están destinados a:",
-    answers: [
-        { text: "Aumentar el contenido calórico del alimento.", correct: false },
-        { text: "Apoyar la salud de la flora bacteriana beneficiosa en el intestino.", correct: true },
-        { text: "Blanquear los dientes.", correct: false },
-        { text: "Mejorar el sabor de la comida exclusivamente.", correct: false }
-    ]
-},
-// --- Categoría 4.5 Extensión: Protocolos Avanzados ---
-{
-    question: "El protocolo 'Juego de 1-2-3' de Chirag Patel es una técnica de manejo que enseña a un perro a:",
-    answers: [
-        { text: "Contar hasta tres antes de comer.", correct: false },
-        { text: "Anticipar y cooperar con un procedimiento potencialmente aversivo (como una inyección) a cambio de un refuerzo predecible.", correct: true },
-        { text: "Realizar una secuencia de tres trucos.", correct: false },
-        { text: "Elegir entre tres juguetes diferentes.", correct: false }
-    ]
-},
-{
-    question: "El protocolo 'Say Please' o 'Nada en la vida es gratis' (NILIF) se centra en:",
-    answers: [
-        { text: "Hacer que el perro pague por todo lo que recibe.", correct: false },
-        { text: "Establecer una rutina predecible donde el perro aprende a ofrecer un comportamiento tranquilo (como sentarse) para obtener recursos.", correct: true },
-        { text: "Ignorar al perro a menos que esté trabajando.", correct: false },
-        { text: "Demostrar la dominancia del humano.", correct: false }
-    ]
-},
-// --- Categoría 2.5 Extensión: Neurobiología del Vínculo ---
-{
-    question: "Estudios de resonancia magnética funcional (fMRI) en perros despiertos han mostrado que el núcleo caudado, una región del cerebro asociada a la recompensa, se activa fuertemente ante:",
-    answers: [
-        { text: "El olor de la comida.", correct: false },
-        { text: "El olor de su humano familiar.", correct: true },
-        { text: "El olor de un perro desconocido.", correct: false },
-        { text: "El sonido de un coche.", correct: false }
-    ]
-},
-{
-    question: "El 'circuito mesolímbico de la dopamina', crucial para la motivación y la recompensa, se activa cuando un perro:",
-    answers: [
-        { text: "Está durmiendo profundamente.", correct: false },
-        { text: "Anticipa la obtención de un refuerzo (como ver a su dueño coger la bolsa de premios).", correct: true },
-        { text: "Siente dolor.", correct: false },
-        { text: "Está siendo castigado.", correct: false }
-    ]
-},
-// --- Categoría 1.2 Extensión: Fisiología Sensorial Avanzada ---
-{
-    question: "El 'tapetum lucidum' es una estructura en el ojo del perro que:",
-    answers: [
-        { text: "Le permite ver en color.", correct: false },
-        { text: "Mejora su visión en condiciones de poca luz al reflejar la luz a través de la retina.", correct: true },
-        { text: "Protege el ojo del polvo.", correct: false },
-        { text: "Enfoca las imágenes en la retina.", correct: false }
-    ]
-},
-{
-    question: "Los perros son más sensibles que los humanos a los sonidos de alta frecuencia. ¿Cuál es el rango auditivo aproximado de un perro?",
-    answers: [
-        { text: "20 - 20,000 Hz.", correct: false },
-        { text: "67 - 45,000 Hz.", correct: true },
-        { text: "100 - 10,000 Hz.", correct: false },
-        { text: "0 - 100,000 Hz.", correct: false }
-    ]
-},
-// --- Categoría 6.1 Extensión: Conceptos Científicos Clave ---
-{
-    question: "El 'Principio de Premack' establece que:",
-    answers: [
-        { text: "Un comportamiento debe ser premiado dentro de los 3 segundos para ser efectivo.", correct: false },
-        { text: "Un comportamiento de alta probabilidad (algo que el perro disfruta hacer) puede ser usado para reforzar un comportamiento de baja probabilidad (algo que le cuesta más).", correct: true },
-        { text: "Todos los perros de una misma raza se comportan igual.", correct: false },
-        { text: "El castigo es más efectivo que el refuerzo.", correct: false }
-    ]
-},
-{
-    question: "La 'navaja de Occam' o principio de parsimonia, aplicado a la etología, sugiere que al explicar un comportamiento debemos:",
-    answers: [
-        { text: "Elegir siempre la explicación más compleja y que atribuya emociones humanas.", correct: false },
-        { text: "Favorecer la explicación más simple que se ajuste a la evidencia.", correct: true },
-        { text: "Considerar únicamente las explicaciones genéticas.", correct: false },
-        { text: "Basar nuestras conclusiones en un único caso de estudio.", correct: false }
-    ]
-},
-// --- Categoría 4.6: Problemas de Comportamiento Complejos ---
-{
-    question: "El 'Pica' es un trastorno que se caracteriza por:",
-    answers: [
-        { text: "La agresión hacia otros perros del mismo hogar.", correct: false },
-        { text: "La ingestión persistente de sustancias no nutritivas (tierra, piedras, tela).", correct: true },
-        { text: "Un miedo irracional a salir al exterior.", correct: false },
-        { text: "Perseguir obsesivamente la propia cola.", correct: false }
-    ]
-},
-{
-    question: "El 'fly-biting' o 'morder al aire' es un comportamiento que puede estar asociado con:",
-    answers: [
-        { text: "Ganas de jugar.", correct: false },
-        { text: "Problemas neurológicos, gastrointestinales o compulsivos.", correct: true },
-        { text: "Un intento de llamar la atención.", correct: false },
-        { text: "Una mala visión.", correct: false }
-    ]
-},
-// --- Miscelánea Postdoctorado II ---
-{
-    question: "El 'efecto placebo' en estudios de comportamiento canino se controla mediante:",
-    answers: [
-        { text: "El uso de un grupo de control que no recibe ningún tratamiento.", correct: false },
-        { text: "Un grupo de control que recibe un tratamiento falso (ej. una pastilla de azúcar) sin que los dueños o investigadores sepan qué grupo recibe qué.", correct: true },
-        { text: "La repetición del experimento varias veces.", correct: false },
-        { text: "El uso de modelos estadísticos complejos.", correct: false }
-    ]
-},
-{
-    question: "La 'impronta' o 'imprinting' es un tipo de aprendizaje crítico que ocurre:",
-    answers: [
-        { text: "Durante toda la vida del animal.", correct: false },
-        { text: "En una fase sensible específica y temprana de la vida, y es relativamente irreversible.", correct: true },
-        { text: "Únicamente a través del refuerzo positivo.", correct: false },
-        { text: "Solo en aves, no en mamíferos.", correct: false }
-    ]
-},
-{
-    question: "El 'bloqueo' (blocking) en el condicionamiento clásico ocurre cuando:",
-    answers: [
-        { text: "Un perro está demasiado cansado para aprender.", correct: false },
-        { text: "La asociación previa de un Estímulo Condicionado (EC1) con un Estímulo Incondicionado (EI) impide la asociación de un segundo estímulo (EC2) con el mismo EI.", correct: true },
-        { text: "El perro bloquea físicamente el acceso del entrenador.", correct: false },
-        { text: "Se presentan demasiados premios a la vez.", correct: false }
-    ]
-},
-{
-    question: "¿Qué es la 'validez ecológica' en un experimento de comportamiento?",
-    answers: [
-        { text: "El grado en que los hallazgos de un estudio pueden generalizarse a entornos y condiciones naturales.", correct: true },
-        { text: "El uso de materiales ecológicos y reciclados en el laboratorio.", correct: false },
-        { text: "La cantidad de variables controladas en el experimento.", correct: false },
-        { text: "La publicación del estudio en una revista de ecología.", correct: false }
-    ]
-}
+    // --- Categoría 4.4: Análisis Funcional del Comportamiento ---
+    {
+        question: "En un Análisis Funcional del Comportamiento (ABC), la 'A' se refiere a:",
+        answers: [
+            { text: "La Acción que realiza el perro.", correct: false },
+            { text: "El Antecedente: lo que ocurre justo antes del comportamiento.", correct: true },
+            { text: "La Amplitud o intensidad del comportamiento.", correct: false },
+            { text: "El Análisis final del caso.", correct: false }
+        ]
+    },
+    {
+        question: "¿Cuál es la función más probable de un comportamiento de ladrido que ocurre consistentemente solo cuando el perro ve a otros perros a través de la ventana y se detiene cuando estos se van?",
+        answers: [
+            { text: "Obtener atención del tutor.", correct: false },
+            { text: "Escape o evitación (el perro cree que sus ladridos hacen que el 'intruso' se vaya).", correct: true },
+            { text: "Acceso a un recurso tangible (un juguete).", correct: false },
+            { text: "Autoestimulación sensorial.", correct: false }
+        ]
+    },
 
+    // --- Categoría 2.7: Programas de Refuerzo Diferencial ---
+    {
+        question: "Estás enseñando a tu perro a no saltar para saludar. Decides reforzarlo solo cuando mantiene las cuatro patas en el suelo. ¿Qué tipo de refuerzo diferencial estás usando?",
+        answers: [
+            { text: "Refuerzo Diferencial de Comportamientos Incompatibles (DRI).", correct: true },
+            { text: "Refuerzo Diferencial de Tasas Bajas de Respuesta (DRL).", correct: false },
+            { text: "Refuerzo Diferencial de Otros Comportamientos (DRO).", correct: false },
+            { text: "Refuerzo Diferencial de Comportamientos Alternativos (DRA).", correct: false }
+        ]
+    },
+    {
+        question: "El Refuerzo Diferencial de Otros Comportamientos (DRO) consiste en premiar al perro por:",
+        answers: [
+            { text: "Realizar un comportamiento específico que le pedimos.", correct: false },
+            { text: "La ausencia del comportamiento problemático durante un intervalo de tiempo determinado.", correct: true },
+            { text: "Hacer el comportamiento problemático menos veces que antes.", correct: false },
+            { text: "Hacer cualquier cosa excepto el comportamiento problemático y otro más.", correct: false }
+        ]
+    },
+
+    // --- Categoría 2.5 Extensión: Neurobiología del Aprendizaje ---
+    {
+        question: "La estructura cerebral que juega un papel central en el procesamiento del miedo y la formación de memorias de miedo es:",
+        answers: [
+            { text: "El cerebelo.", correct: false },
+            { text: "El hipocampo.", correct: false },
+            { text: "La amígdala.", correct: true },
+            { text: "El córtex prefrontal.", correct: false }
+        ]
+    },
+    {
+        question: "El neurotransmisor asociado con la motivación, la recompensa y el comportamiento de búsqueda es principalmente:",
+        answers: [
+            { text: "La serotonina.", correct: false },
+            { text: "La dopamina.", correct: true },
+            { text: "El GABA.", correct: false },
+            { text: "La noradrenalina.", correct: false }
+        ]
+    },
+
+    // --- Categoría 3.5 Extensión: Salud y Comportamiento Avanzado ---
+    {
+        question: "Un cambio repentino de comportamiento, como irritabilidad o letargo en un perro adulto, podría estar relacionado con una condición médica subyacente como:",
+        answers: [
+            { text: "El hipotiroidismo.", correct: true },
+            { text: "Una alergia estacional.", correct: false },
+            { text: "El crecimiento excesivo de las uñas.", correct: false },
+            { text: "La muda de pelo.", correct: false }
+        ]
+    },
+    {
+        question: "El Síndrome de Disfunción Cognitiva en perros senior es análogo a qué enfermedad en humanos?",
+        answers: [
+            { text: "La enfermedad de Parkinson.", correct: false },
+            { text: "La esclerosis múltiple.", correct: false },
+            { text: "La enfermedad de Alzheimer.", correct: true },
+            { text: "La diabetes.", correct: false }
+        ]
+    },
+
+    // --- Categoría 2.3 Extensión: Cognición Comparada ---
+    {
+        question: "El 'aprendizaje por observación' en perros, donde aprenden una tarea viendo a otro perro o a un humano realizarla, se conoce como:",
+        answers: [
+            { text: "Facilitación social.", correct: false },
+            { text: "Efecto de audiencia.", correct: false },
+            { text: "El paradigma 'Do as I Do' (Haz lo que yo hago).", correct: true },
+            { text: "Condicionamiento vicario.", correct: false }
+        ]
+    },
+    {
+        question: "La capacidad de un perro para hacer inferencias por exclusión (ej. si debe buscar un objeto nuevo entre varios familiares, escogerá el que no conoce) sugiere:",
+        answers: [
+            { text: "Una memoria fotográfica.", correct: false },
+            { text: "Un proceso de razonamiento simple.", correct: true },
+            { text: "Una habilidad telepática.", correct: false },
+            { text: "Un comportamiento puramente aleatorio.", correct: false }
+        ]
+    },
+
+    // --- Categoría 1.5 Extensión: Genética del Comportamiento ---
+    {
+        question: "Un 'Estudio de Asociación del Genoma Completo' (GWAS) en perros busca:",
+        answers: [
+            { text: "Crear nuevas razas de perros.", correct: false },
+            { text: "Identificar marcadores genéticos (SNPs) asociados con rasgos específicos, como un comportamiento o una enfermedad.", correct: true },
+            { text: "Determinar el árbol genealógico de un perro.", correct: false },
+            { text: "Clonar un perro con rasgos deseables.", correct: false }
+        ]
+    },
+    {
+        question: "La heredabilidad de un rasgo de comportamiento como la reactividad al ruido es de 0.4. Esto significa que:",
+        answers: [
+            { text: "El 40% de la reactividad del perro está causada por sus genes.", correct: false },
+            { text: "El 40% de la variación de la reactividad al ruido en la población estudiada puede atribuirse a la variación genética.", correct: true },
+            { text: "El ambiente no tiene ningún efecto sobre la reactividad al ruido.", correct: false },
+            { text: "El perro tiene un 40% de probabilidades de ser reactivo al ruido.", correct: false }
+        ]
+    },
+
+    // --- Categoría 6.1 Extensión: Metodología de la Investigación ---
+    {
+        question: "En un estudio observacional del comportamiento canino, la 'fiabilidad interobservador' se refiere a:",
+        answers: [
+            { text: "La confianza que los observadores tienen en los perros.", correct: false },
+            { text: "El grado de acuerdo entre dos o más observadores independientes que registran el mismo comportamiento.", correct: true },
+            { text: "La habilidad de un observador para predecir el comportamiento del perro.", correct: false },
+            { text: "La calidad de las cámaras utilizadas para grabar.", correct: false }
+        ]
+    },
+    {
+        question: "Un 'etograma' es una herramienta fundamental en la etología que consiste en:",
+        answers: [
+            { text: "Un gráfico que muestra la popularidad de las razas de perros.", correct: false },
+            { text: "Un catálogo detallado y objetivo de los comportamientos específicos de una especie.", correct: true },
+            { text: "El historial médico completo de un animal.", correct: false },
+            { text: "Un programa de software para analizar el ADN canino.", correct: false }
+        ]
+    },
+
+    // --- Categoría 4.5: Protocolos de Modificación de Conducta Avanzados ---
+    {
+        question: "El protocolo 'Constructional Aggression Treatment' (CAT) se diferencia de otros métodos en que:",
+        answers: [
+            { text: "Se enfoca en premiar al perro por estar tranquilo.", correct: false },
+            { text: "Utiliza el refuerzo negativo (la retirada del estímulo aversivo) para enseñar un comportamiento social alternativo a la agresión.", correct: true },
+            { text: "Se basa exclusivamente en el castigo positivo.", correct: false },
+            { text: "Solo se puede usar con cachorros.", correct: false }
+        ]
+    },
+    {
+        question: "El 'Protocolo de Relajación' de Karen Overall está diseñado para:",
+        answers: [
+            { text: "Enseñar al perro a relajarse en una variedad de situaciones y en presencia de estímulos de baja intensidad.", correct: true },
+            { text: "Hacer que el perro duerma más horas.", correct: false },
+            { text: "Enseñar trucos de obediencia de forma relajada.", correct: false },
+            { text: "Medicar a los perros para que estén tranquilos.", correct: false }
+        ]
+    },
+    {
+        question: "El protocolo 'Look at That' (LAT) de Leslie McDevitt es un juego diseñado para:",
+        answers: [
+            { text: "Enseñar al perro a ignorar sus estímulos aversivos.", correct: false },
+            { text: "Cambiar la respuesta emocional de un perro hacia un estímulo, enseñándole a mirarlo y luego a mirar al humano para recibir un premio.", correct: true },
+            { text: "Hacer que el perro ladre a los estímulos que le dan miedo.", correct: false },
+            { text: "Enseñar al perro a buscar objetos específicos.", correct: false }
+        ]
+    },
+
+    // --- Miscelánea Postdoctorado ---
+    {
+        question: "La 'lateralización cerebral' en perros sugiere que, de forma similar a los humanos, el hemisferio derecho está más implicado en:",
+        answers: [
+            { text: "El procesamiento de rutinas y comportamientos familiares.", correct: false },
+            { text: "El control del apetito y la sed.", correct: false },
+            { text: "La respuesta a estímulos novedosos y la expresión de emociones intensas como el miedo.", correct: true },
+            { text: "La planificación a largo plazo.", correct: false }
+        ]
+    },
+    {
+        question: "El 'efecto audiencia' en el comportamiento canino se refiere a cómo un perro:",
+        answers: [
+            { text: "Solo obedece si hay un público mirando.", correct: false },
+            { text: "Cambia su comportamiento (ej. obedece más rápido) dependiendo de si su tutor está prestando atención o no.", correct: true },
+            { text: "Se distrae fácilmente con los ruidos del público.", correct: false },
+            { text: "Le gusta ver programas de televisión con perros.", correct: false }
+        ]
+    },
+    {
+        question: "El término 'Umwelt', popularizado por Jakob von Uexküll, se refiere al:",
+        answers: [
+            { text: "Entorno físico objetivo en el que vive un animal.", correct: false },
+            { text: "Mundo perceptivo y subjetivo de un animal, formado por lo que sus sentidos le permiten experimentar.", correct: true },
+            { text: "La jerarquía social dentro de un grupo de animales.", correct: false },
+            { text: "El código genético de una especie.", correct: false }
+        ]
+    },
+
+    // --- LOTE 8 ---
+    // --- Categoría 7.1: Psicofarmacología Conductual ---
+    {
+        question: "La Fluoxetina (Prozac) es un fármaco a veces usado para tratar la ansiedad en perros. ¿A qué clase de medicamento pertenece?",
+        answers: [
+            { text: "Benzodiazepina.", correct: false },
+            { text: "Inhibidor Selectivo de la Recaptación de Serotonina (ISRS).", correct: true },
+            { text: "Antidepresivo Tricíclico (ATC).", correct: false },
+            { text: "Inhibidor de la Monoaminooxidasa (IMAO).", correct: false }
+        ]
+    },
+    {
+        question: "La Trazodona se utiliza a menudo en el ámbito veterinario como un ansiolítico de acción rápida para situaciones específicas (ej. viajes, tormentas) porque:",
+        answers: [
+            { text: "Aumenta los niveles de dopamina.", correct: false },
+            { text: "Actúa como antagonista de los receptores de serotonina e inhibidor de su recaptación (SARI).", correct: true },
+            { text: "Es un antibiótico de amplio espectro.", correct: false },
+            { text: "Bloquea los receptores del dolor.", correct: false }
+        ]
+    },
+
+    // --- Categoría 2.3 Extensión: Cognición Numérica y Espacial ---
+    {
+        question: "Estudios sobre la cognición numérica en perros sugieren que pueden tener una habilidad rudimentaria para:",
+        answers: [
+            { text: "Realizar sumas y restas complejas.", correct: false },
+            { text: "Diferenciar entre pequeñas cantidades de objetos (subitizing) y estimar cantidades mayores.", correct: true },
+            { text: "Entender el concepto de cero.", correct: false },
+            { text: "Contar secuencialmente como un humano.", correct: false }
+        ]
+    },
+    {
+        question: "La habilidad de un perro para encontrar el camino más corto a un objetivo, incluso si implica desviarse momentáneamente de la línea recta, demuestra:",
+        answers: [
+            { text: "Una comprensión de la geometría euclidiana.", correct: false },
+            { text: "Cognición espacial y la capacidad de planificar rutas.", correct: true },
+            { text: "Un sentido del olfato superior.", correct: false },
+            { text: "Un comportamiento puramente aleatorio.", correct: false }
+        ]
+    },
+
+    // --- Categoría 3.5 Extensión: El Eje Intestino-Cerebro ---
+    {
+        question: "La investigación sobre el 'eje intestino-cerebro' en perros sugiere que la salud del microbioma intestinal puede influir en:",
+        answers: [
+            { text: "El color del pelaje del perro.", correct: false },
+            { text: "La longitud de la cola.", correct: false },
+            { text: "Comportamientos relacionados con la ansiedad y el estrés.", correct: true },
+            { text: "La agudeza visual.", correct: false }
+        ]
+    },
+    {
+        question: "Los probióticos y prebióticos en la dieta de un perro están destinados a:",
+        answers: [
+            { text: "Aumentar el contenido calórico del alimento.", correct: false },
+            { text: "Apoyar la salud de la flora bacteriana beneficiosa en el intestino.", correct: true },
+            { text: "Blanquear los dientes.", correct: false },
+            { text: "Mejorar el sabor de la comida exclusivamente.", correct: false }
+        ]
+    },
+
+    // --- Categoría 4.5 Extensión: Protocolos Avanzados ---
+    {
+        question: "El protocolo 'Juego de 1-2-3' de Chirag Patel es una técnica de manejo que enseña a un perro a:",
+        answers: [
+            { text: "Contar hasta tres antes de comer.", correct: false },
+            { text: "Anticipar y cooperar con un procedimiento potencialmente aversivo (como una inyección) a cambio de un refuerzo predecible.", correct: true },
+            { text: "Realizar una secuencia de tres trucos.", correct: false },
+            { text: "Elegir entre tres juguetes diferentes.", correct: false }
+        ]
+    },
+    {
+        question: "El protocolo 'Say Please' o 'Nada en la vida es gratis' (NILIF) se centra en:",
+        answers: [
+            { text: "Hacer que el perro pague por todo lo que recibe.", correct: false },
+            { text: "Establecer una rutina predecible donde el perro aprende a ofrecer un comportamiento tranquilo (como sentarse) para obtener recursos.", correct: true },
+            { text: "Ignorar al perro a menos que esté trabajando.", correct: false },
+            { text: "Demostrar la dominancia del humano.", correct: false }
+        ]
+    },
+
+    // --- Categoría 2.5 Extensión: Neurobiología del Vínculo ---
+    {
+        question: "Estudios de resonancia magnética funcional (fMRI) en perros despiertos han mostrado que el núcleo caudado, una región del cerebro asociada a la recompensa, se activa fuertemente ante:",
+        answers: [
+            { text: "El olor de la comida.", correct: false },
+            { text: "El olor de su humano familiar.", correct: true },
+            { text: "El olor de un perro desconocido.", correct: false },
+            { text: "El sonido de un coche.", correct: false }
+        ]
+    },
+    {
+        question: "El 'circuito mesolímbico de la dopamina', crucial para la motivación y la recompensa, se activa cuando un perro:",
+        answers: [
+            { text: "Está durmiendo profundamente.", correct: false },
+            { text: "Anticipa la obtención de un refuerzo (como ver a su dueño coger la bolsa de premios).", correct: true },
+            { text: "Siente dolor.", correct: false },
+            { text: "Está siendo castigado.", correct: false }
+        ]
+    },
+
+    // --- Categoría 1.2 Extensión: Fisiología Sensorial Avanzada ---
+    {
+        question: "El 'tapetum lucidum' es una estructura en el ojo del perro que:",
+        answers: [
+            { text: "Le permite ver en color.", correct: false },
+            { text: "Mejora su visión en condiciones de poca luz al reflejar la luz a través de la retina.", correct: true },
+            { text: "Protege el ojo del polvo.", correct: false },
+            { text: "Enfoca las imágenes en la retina.", correct: false }
+        ]
+    },
+    {
+        question: "Los perros son más sensibles que los humanos a los sonidos de alta frecuencia. ¿Cuál es el rango auditivo aproximado de un perro?",
+        answers: [
+            { text: "20 - 20,000 Hz.", correct: false },
+            { text: "67 - 45,000 Hz.", correct: true },
+            { text: "100 - 10,000 Hz.", correct: false },
+            { text: "0 - 100,000 Hz.", correct: false }
+        ]
+    },
+
+    // --- Categoría 6.1 Extensión: Conceptos Científicos Clave ---
+    {
+        question: "El 'Principio de Premack' establece que:",
+        answers: [
+            { text: "Un comportamiento debe ser premiado dentro de los 3 segundos para ser efectivo.", correct: false },
+            { text: "Un comportamiento de alta probabilidad (algo que el perro disfruta hacer) puede ser usado para reforzar un comportamiento de baja probabilidad (algo que le cuesta más).", correct: true },
+            { text: "Todos los perros de una misma raza se comportan igual.", correct: false },
+            { text: "El castigo es más efectivo que el refuerzo.", correct: false }
+        ]
+    },
+    {
+        question: "La 'navaja de Occam' o principio de parsimonia, aplicado a la etología, sugiere que al explicar un comportamiento debemos:",
+        answers: [
+            { text: "Elegir siempre la explicación más compleja y que atribuya emociones humanas.", correct: false },
+            { text: "Favorecer la explicación más simple que se ajuste a la evidencia.", correct: true },
+            { text: "Considerar únicamente las explicaciones genéticas.", correct: false },
+            { text: "Basar nuestras conclusiones en un único caso de estudio.", correct: false }
+        ]
+    },
+
+    // --- Categoría 4.6: Problemas de Comportamiento Complejos ---
+    {
+        question: "El 'Pica' es un trastorno que se caracteriza por:",
+        answers: [
+            { text: "La agresión hacia otros perros del mismo hogar.", correct: false },
+            { text: "La ingestión persistente de sustancias no nutritivas (tierra, piedras, tela).", correct: true },
+            { text: "Un miedo irracional a salir al exterior.", correct: false },
+            { text: "Perseguir obsesivamente la propia cola.", correct: false }
+        ]
+    },
+    {
+        question: "El 'fly-biting' o 'morder al aire' es un comportamiento que puede estar asociado con:",
+        answers: [
+            { text: "Ganas de jugar.", correct: false },
+            { text: "Problemas neurológicos, gastrointestinales o compulsivos.", correct: true },
+            { text: "Un intento de llamar la atención.", correct: false },
+            { text: "Una mala visión.", correct: false }
+        ]
+    },
+
+    // --- Miscelánea Postdoctorado II ---
+    {
+        question: "El 'efecto placebo' en estudios de comportamiento canino se controla mediante:",
+        answers: [
+            { text: "El uso de un grupo de control que no recibe ningún tratamiento.", correct: false },
+            { text: "Un grupo de control que recibe un tratamiento falso (ej. una pastilla de azúcar) sin que los dueños o investigadores sepan qué grupo recibe qué.", correct: true },
+            { text: "La repetición del experimento varias veces.", correct: false },
+            { text: "El uso de modelos estadísticos complejos.", correct: false }
+        ]
+    },
+    {
+        question: "La 'impronta' o 'imprinting' es un tipo de aprendizaje crítico que ocurre:",
+        answers: [
+            { text: "Durante toda la vida del animal.", correct: false },
+            { text: "En una fase sensible específica y temprana de la vida, y es relativamente irreversible.", correct: true },
+            { text: "Únicamente a través del refuerzo positivo.", correct: false },
+            { text: "Solo en aves, no en mamíferos.", correct: false }
+        ]
+    },
+    {
+        question: "El 'bloqueo' (blocking) en el condicionamiento clásico ocurre cuando:",
+        answers: [
+            { text: "Un perro está demasiado cansado para aprender.", correct: false },
+            { text: "La asociación previa de un Estímulo Condicionado (EC1) con un Estímulo Incondicionado (EI) impide la asociación de un segundo estímulo (EC2) con el mismo EI.", correct: true },
+            { text: "El perro bloquea físicamente el acceso del entrenador.", correct: false },
+            { text: "Se presentan demasiados premios a la vez.", correct: false }
+        ]
+    },
+    {
+        question: "¿Qué es la 'validez ecológica' en un experimento de comportamiento?",
+        answers: [
+            { text: "El grado en que los hallazgos de un estudio pueden generalizarse a entornos y condiciones naturales.", correct: true },
+            { text: "El uso de materiales ecológicos y reciclados en el laboratorio.", correct: false },
+            { text: "La cantidad de variables controladas en el experimento.", correct: false },
+            { text: "La publicación del estudio en una revista de ecología.", correct: false }
+        ]
+    }
 ];
-
-
-
