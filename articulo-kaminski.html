@@ -1,163 +1,425 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Ciencia Detrás de los 'Ojos de Cachorro' | GuíaCanina Abierta</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .prose h2 {
-            font-size: 1.875rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            margin-top: 2.5rem;
-            color: #1e293b; /* slate-800 */
-        }
-        .prose h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            margin-top: 2rem;
-            color: #334155; /* slate-700 */
-        }
-        .prose strong {
-            color: #0f172a; /* slate-900 */
-        }
-        .prose a {
-            color: #0284c7; /* sky-600 */
-            text-decoration: none;
-        }
-        .prose a:hover {
-            text-decoration: underline;
-        }
-        .prose blockquote {
-            border-left-color: #0ea5e9; /* sky-500 */
-            color: #1e293b;
-        }
-        .prose ul > li::before {
-             background-color: #0284c7; /* sky-600 */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Ciencia Detrás de los 'Ojos de Cachorro' | GuíaCanina Abierta</title>
+  <meta
+    name="description"
+    content="Análisis divulgativo de un estudio sobre la evolución de la musculatura facial canina y la expresión conocida como 'ojos de cachorro'."
+  />
+  <meta name="author" content="Jenner Feijoo" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-500: #64748b;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --sky-500: #0ea5e9;
+      --sky-600: #0284c7;
+      --emerald-500: #10b981;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-700);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 1rem;
+      background: white;
+      color: black;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      z-index: 200;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, var(--sky-500), var(--emerald-500));
+      z-index: 100;
+    }
+
+    .article-shell {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 1rem;
+      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.06);
+    }
+
+    .hero-banner {
+      background:
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.08), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.08), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-radius: 1rem;
+      border: 1px solid var(--slate-200);
+    }
+
+    .prose-custom h2 {
+      font-size: clamp(1.75rem, 2vw, 2.15rem);
+      line-height: 1.2;
+      font-weight: 800;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: var(--slate-900);
+    }
+
+    .prose-custom h3 {
+      font-size: clamp(1.25rem, 1.7vw, 1.5rem);
+      line-height: 1.3;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--slate-800);
+    }
+
+    .prose-custom p {
+      margin: 0 0 1rem 0;
+      line-height: 1.85;
+    }
+
+    .prose-custom ul {
+      margin: 0 0 1rem 0;
+      padding-left: 1.2rem;
+    }
+
+    .prose-custom li {
+      margin-bottom: 0.55rem;
+      line-height: 1.75;
+    }
+
+    .prose-custom strong {
+      color: var(--slate-900);
+    }
+
+    .prose-custom a {
+      color: var(--sky-600);
+      text-decoration: none;
+    }
+
+    .prose-custom a:hover,
+    .prose-custom a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .prose-custom blockquote {
+      border-left: 4px solid var(--sky-500);
+      background: #f0f9ff;
+      color: var(--slate-800);
+      padding: 1rem 1rem 1rem 1.25rem;
+      border-radius: 0.75rem;
+      margin: 1.5rem 0;
+      font-style: normal;
+    }
+
+    .callout {
+      border-left: 4px solid var(--sky-500);
+      background: #f0f9ff;
+      padding: 1rem 1rem 1rem 1.1rem;
+      border-radius: 0.8rem;
+      margin: 1.2rem 0;
+    }
+
+    figure img {
+      width: 100%;
+      border-radius: 0.9rem;
+      border: 1px solid var(--slate-200);
+    }
+
+    figcaption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--slate-500);
+      margin-top: 0.65rem;
+      line-height: 1.6;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 9999px;
+      padding: 0.35rem 0.75rem;
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    .ref-box {
+      border: 1px solid var(--slate-200);
+      border-radius: 0.9rem;
+      background: var(--slate-50);
+      padding: 1rem;
+    }
+
+    .footer-link:hover {
+      color: white;
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-700">
+<body>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido</a>
 
-    <!-- Header y Navegación -->
-    <header class="bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-slate-900">GuíaCanina</a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="guia.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">La Guía</a>
-                <a href="blog.html" class="text-sky-600 font-semibold transition duration-300">Blog Científico</a>
-                <a href="servicios.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Mis Servicios</a>
-                <a href="sobre-mi.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Sobre Mí</a>
-                <a href="apoyame.html" class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 font-semibold transition duration-300 shadow">Apoya el Proyecto</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-slate-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
-            </button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
-             <a href="guia.html" class="block text-slate-600 hover:text-sky-600 font-medium">La Guía</a>
-             <a href="blog.html" class="block text-sky-600 font-semibold">Blog Científico</a>
-             <a href="servicios.html" class="block text-slate-600 hover:text-sky-600 font-medium">Mis Servicios</a>
-             <a href="sobre-mi.html" class="block text-slate-600 hover:text-sky-600 font-medium">Sobre Mí</a>
-             <a href="apoyame.html" class="block bg-emerald-500 text-white px-4 py-2 rounded-lg text-center font-semibold hover:bg-emerald-600">Apoya el Proyecto</a>
+  <header class="bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50 border-b border-slate-200">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-extrabold text-slate-900 tracking-tight">GuíaCanina</a>
+
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="guia.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">La Guía</a>
+        <a href="blog.html" class="text-sky-600 font-semibold transition duration-300" aria-current="page">Blog Científico</a>
+        <a href="servicios.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Mis Servicios</a>
+        <a href="sobre-mi.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Sobre Mí</a>
+        <a href="apoyame.html" class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 font-semibold transition duration-300 shadow">Apoya el Proyecto</a>
+      </div>
+
+      <button id="mobile-menu-button" class="md:hidden text-slate-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3 border-t border-slate-200">
+      <a href="guia.html" class="block text-slate-600 hover:text-sky-600 font-medium pt-3">La Guía</a>
+      <a href="blog.html" class="block text-sky-600 font-semibold" aria-current="page">Blog Científico</a>
+      <a href="servicios.html" class="block text-slate-600 hover:text-sky-600 font-medium">Mis Servicios</a>
+      <a href="sobre-mi.html" class="block text-slate-600 hover:text-sky-600 font-medium">Sobre Mí</a>
+      <a href="apoyame.html" class="block bg-emerald-500 text-white px-4 py-2 rounded-lg text-center font-semibold hover:bg-emerald-600">Apoya el Proyecto</a>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="container mx-auto px-6 py-10 md:py-14">
+    <section class="hero-banner max-w-4xl mx-auto p-8 md:p-10 mb-8">
+      <p class="meta-chip mb-4">Análisis de estudio científico</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4">
+        La Ciencia Detrás de los “Ojos de Cachorro”
+      </h1>
+      <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl">
+        Cómo los perros evolucionaron anatómicamente para comunicarse mejor con los humanos.
+      </p>
+      <p class="mt-4 text-sm text-slate-500">Publicado el 18 de septiembre de 2025</p>
+    </section>
+
+    <article class="max-w-4xl mx-auto article-shell p-8 md:p-12 prose-custom">
+      <figure class="mt-0">
+        <img
+          src="https://placehold.co/800x400/e0f2fe/0c4a6e?text=Anatom%C3%ADa+Facial+Canina"
+          alt="Diagrama simplificado mostrando el músculo de la ceja en un perro"
+        />
+        <figcaption>
+          La expresión AU101 es posible gracias a un músculo que los perros domésticos han desarrollado,
+          mientras que en los lobos está ausente o muy poco desarrollado.
+        </figcaption>
+      </figure>
+
+      <hr class="my-8 border-slate-200" />
+
+      <p>
+        Todos lo hemos experimentado: ese momento en que un perro nos mira, levanta la parte interior de sus cejas y nos derrite el corazón. Esta expresión, conocida popularmente como “ojos de cachorro”, es una herramienta de comunicación extraordinariamente eficaz. La pregunta interesante no es solo si funciona, sino <strong>por qué existe</strong> y cómo pudo consolidarse durante la domesticación.
+      </p>
+
+      <p>
+        Un estudio publicado en <em>Proceedings of the National Academy of Sciences</em> por Juliane Kaminski y su equipo propuso una explicación notable: <strong>la anatomía facial de los perros evolucionó de forma específica para producir expresiones que facilitan la comunicación con los humanos</strong>.
+      </p>
+
+      <section id="el-estudio">
+        <h2>El estudio: comparando perros y lobos</h2>
+        <p>
+          Para investigar el origen de esta expresión, los autores compararon perros domésticos
+          (<em>Canis familiaris</em>) con lobos grises (<em>Canis lupus</em>), sus parientes vivos más cercanos.
+          El análisis incluyó disección anatómica de la musculatura facial y observación conductual
+          durante interacciones con humanos.
+        </p>
+
+        <blockquote>
+          Encontramos que la musculatura facial de perros y lobos era similar, excepto por la zona de
+          los ojos. Los perros tienen un pequeño músculo que les permite levantar intensamente la ceja
+          interna, algo que los lobos no tienen.
+        </blockquote>
+
+        <p>
+          El músculo clave identificado fue el <strong>levator anguli oculi medialis (LAOM)</strong>. En perros
+          aparecía de forma consistente y bien desarrollada. En lobos, en cambio, estaba ausente o reducido a fibras muy poco diferenciadas. Además, otro músculo relacionado con la expresión de los ojos, el
+          <em>retractor anguli oculi lateralis</em>, también mostraba mayor desarrollo en perros.
+        </p>
+
+        <h3>La anatomía no fue la única evidencia</h3>
+        <p>
+          El estudio también evaluó cómo se comportaban perros de refugio y lobos durante interacciones con personas. Los resultados mostraron que los perros realizaban con mucha más frecuencia y con mayor intensidad el movimiento facial correspondiente a levantar la ceja interna, denominado <strong>AU101</strong>.
+        </p>
+
+        <div class="callout">
+          <p><strong>Interpretación importante:</strong> no se trata solo de que los perros “parezcan tiernos”. Se trata de una diferencia anatómica y funcional que probablemente afectó de manera directa la relación humano-perro.</p>
         </div>
-    </header>
+      </section>
 
-    <main class="container mx-auto px-6 py-12 md:py-16">
-        <article class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg prose prose-lg">
-            
-            <header>
-                <p class="text-base font-semibold text-sky-600">ANÁLISIS DE ESTUDIO CIENTÍFICO</p>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">La Ciencia Detrás de los 'Ojos de Cachorro'</h1>
-                <p class="text-xl text-slate-600">Cómo los perros evolucionaron anatómicamente para comunicarse mejor con los humanos.</p>
-                <p class="mt-4 text-sm text-slate-500">Publicado el 18 de Septiembre, 2025</p>
-            </header>
-            
-            <figure class="mt-8">
-                <img src="https://placehold.co/800x400/e0f2fe/0c4a6e?text=Anatom%C3%ADa+Facial+Canina" alt="Diagrama simplificado mostrando el músculo de la ceja en un perro" class="rounded-lg w-full">
-                <figcaption class="text-center text-sm text-slate-500 mt-2">La expresión AU101 es posible gracias a un músculo que los perros domésticos han desarrollado, pero que sus ancestros, los lobos, apenas poseen.</figcaption>
-            </figure>
+      <section id="que-significa">
+        <h2>¿Qué significa esto para la relación humano-perro?</h2>
+        <p>
+          La expresión de “ojos de cachorro” hace que los ojos del perro parezcan más grandes y con una apariencia más juvenil. En términos perceptivos, eso activa en humanos respuestas de atención, cuidado y empatía. Es decir, no solo vemos una expresión; <strong>respondemos emocionalmente a ella</strong>.
+        </p>
 
-            <hr class="my-8">
+        <p>
+          Una hipótesis plausible es que, a lo largo de miles de años, los perros que producían con más eficacia esta expresión obtuvieron ventajas en su relación con los humanos: más atención, más protección, más tolerancia y, en último término, mayor éxito reproductivo. La domesticación no solo habría cambiado el comportamiento de los perros, sino también su anatomía facial en direcciones compatibles con la vida social junto a nosotros.
+        </p>
 
-            <p>Todos lo hemos experimentado: ese momento en que un perro nos mira, levanta la parte interior de sus cejas y nos derrite el corazón. Esta expresión, conocida como "ojos de cachorro", es una herramienta de comunicación increíblemente poderosa. Pero, ¿es algo que los perros hacen conscientemente? ¿Y cómo llegaron a ser tan buenos en ello? Un fascinante estudio publicado en PNAS por la Dra. Juliane Kaminski y su equipo nos da una respuesta sorprendente: <strong>la anatomía facial de los perros ha evolucionado específicamente para producir esta expresión, probablemente debido a la preferencia humana.</strong></p>
+        <h3>Puntos clave para recordar</h3>
+        <ul>
+          <li><strong>No es “manipulación” en sentido moral:</strong> es una forma de comunicación favorecida por la evolución y por la convivencia con humanos.</li>
+          <li><strong>Es un rasgo de domesticación:</strong> ofrece un ejemplo especialmente claro de cómo la selección ligada a la vida con personas puede modificar el cuerpo.</li>
+          <li><strong>Refuerza el vínculo:</strong> la expresión facilita interacciones más empáticas y una mayor sensibilidad humana hacia el perro.</li>
+          <li><strong>Conecta anatomía y conducta:</strong> la forma del rostro y la forma de expresarse no están separadas; evolucionan juntas.</li>
+        </ul>
+      </section>
 
-            <section id="el-estudio">
-                <h2>El Estudio: Comparando Perros y Lobos</h2>
-                <p>Para entender el origen de este comportamiento, los investigadores realizaron un detallado análisis comparativo entre perros domésticos (<em>Canis familiaris</em>) y sus parientes más cercanos, los lobos grises (<em>Canis lupus</em>). El equipo diseccionó cabezas de ambas especies para comparar su musculatura facial.</p>
-                <blockquote>
-                    "Encontramos que la musculatura facial de perros y lobos era similar, excepto por la zona de los ojos. Los perros tienen un pequeño músculo que les permite levantar intensamente la ceja interna, algo que los lobos no tienen." - Dra. Juliane Kaminski.
-                </blockquote>
-                <p>El músculo en cuestión es el <strong>levator anguli oculi medialis (LAOM)</strong>. El estudio descubrió que este músculo estaba uniformemente presente y muy desarrollado en los perros, mientras que en los lobos era apenas un conjunto irregular de fibras. Además, el músculo retractor anguli oculi lateralis, que tira de la comisura de los párpados hacia las orejas, también estaba más desarrollado en los perros.</p>
-                
-                <h3>El Comportamiento no Miente</h3>
-                <p>No se quedaron solo con la anatomía. También observaron el comportamiento de 27 perros de refugio y 9 lobos al interactuar con un humano. Los resultados fueron claros:</p>
-                <ul>
-                    <li>Los perros levantaban sus cejas internas (un movimiento llamado AU101) significativamente <strong>más a menudo</strong> que los lobos.</li>
-                    <li>La <strong>intensidad</strong> de este movimiento era también mucho mayor en los perros.</li>
-                </ul>
-            </section>
-            
-            <section id="que-significa">
-                <h2>¿Qué Significa Esto para Ti y tu Perro?</h2>
-                <p>Estos hallazgos son más que una simple curiosidad anatómica. Sugieren un poderoso mecanismo de selección durante la domesticación. La expresión de "ojos de cachorro" hace que los ojos del perro parezcan más grandes y más infantiles, lo que desencadena una respuesta de cuidado en los humanos. Es una expresión que a menudo se asocia con la tristeza, lo que podría hacer que los humanos sientan más empatía y ganas de proteger.</p>
-                <p>Es probable que, a lo largo de miles de años, los perros que podían producir esta expresión con mayor eficacia fueran <strong>seleccionados preferentemente por los humanos</strong> (consciente o inconscientemente), lo que les dio una ventaja reproductiva. En otras palabras, hemos moldeado la cara de los perros para que puedan "hablarnos" de una manera que encontramos irresistible.</p>
-                
-                <h3>Puntos Clave para Recordar:</h3>
-                <ul>
-                    <li><strong>No es manipulación, es conexión:</strong> Tu perro no está tratando de "engañarte" cuando te pone esos ojos. Es una característica evolutiva que fortalece el vínculo entre ambos.</li>
-                    <li><strong>Una ventana a sus emociones:</strong> Prestar atención a estos movimientos faciales sutiles puede darte pistas sobre el estado de atención y compromiso de tu perro contigo.</li>
-                    <li><strong>Un rasgo de domesticación:</strong> Este es uno de los ejemplos más claros de cómo la convivencia con los humanos ha cambiado físicamente a los perros en un tiempo evolutivo muy corto (aproximadamente 33,000 años).</li>
-                </ul>
-            </section>
+      <section id="por-que-importa">
+        <h2>Por qué este estudio importa más allá de la anécdota</h2>
+        <p>
+          Este trabajo es relevante porque conecta tres niveles que a menudo se estudian por separado: <strong>evolución, anatomía y cognición social</strong>. No se limita a decir que los perros “nos entienden mejor”, sino que sugiere que la domesticación pudo favorecer cambios físicos que optimizaron la comunicación interespecífica.
+        </p>
 
-            <section id="conclusion">
-                <h2>Conclusión</h2>
-                <p>La investigación de Kaminski et al. es una hermosa demostración de la profunda coevolución entre humanos y perros. La próxima vez que tu perro te mire y levante esas cejas, recuerda que no estás viendo solo una cara bonita. Estás presenciando el resultado de miles de años de historia compartida, una adaptación anatómica que ha sido fundamental para cimentar el lugar de los perros en nuestros corazones y hogares.</p>
-            </section>
-            
-            <hr class="my-8">
-            <footer class="text-sm">
-                <p class="text-slate-800 font-semibold">Referencia del estudio:</p>
-                <p class="text-slate-600 italic">Kaminski, J., Waller, B. M., Diogo, R., Hartstone-Rose, A., & Burrows, A. M. (2019). Evolution of facial muscle anatomy in dogs. Proceedings of the National Academy of Sciences, 116(29), 14677-14681.</p>
-                 <a href="https://www.pnas.org/doi/10.1073/pnas.1820653116" target="_blank" class="text-sky-600 hover:underline">Ver publicación original</a>
-            </footer>
+        <p>
+          En divulgación científica esto es muy valioso, porque muestra que la relación con los perros no es una simple historia de utilidad práctica o compañía emocional: también es una historia de coadaptación biológica.
+        </p>
+      </section>
 
-        </article>
-    </main>
+      <section id="conclusion">
+        <h2>Conclusión</h2>
+        <p>
+          La investigación de Kaminski y colaboradores ofrece una demostración elegante de la profundidad de la coevolución entre humanos y perros. La próxima vez que un perro levante la ceja interna y te mire con esa expresión tan característica, no estarás viendo solo una cara simpática. Estarás viendo el resultado de miles de años de historia compartida, selección y adaptación mutua.
+        </p>
 
-    <!-- Footer -->
-    <footer class="bg-slate-800 text-slate-300">
-        <div class="container mx-auto px-6 py-12">
-            <!-- Contenido del footer replicado -->
+        <p>
+          En términos simples: los perros no solo aprendieron a vivir con nosotros. También, en cierta medida, <strong>evolucionaron para ser leídos por nosotros</strong>.
+        </p>
+      </section>
+
+      <hr class="my-8 border-slate-200" />
+
+      <footer class="text-sm">
+        <div class="ref-box">
+          <p class="text-slate-900 font-semibold mb-2">Referencia del estudio</p>
+          <p class="text-slate-600 italic mb-3">
+            Kaminski, J., Waller, B. M., Diogo, R., Hartstone-Rose, A., & Burrows, A. M. (2019).
+            Evolution of facial muscle anatomy in dogs. <em>Proceedings of the National Academy of Sciences</em>,
+            116(29), 14677–14681.
+          </p>
+          <a
+            href="https://www.pnas.org/doi/10.1073/pnas.1820653116"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sky-600 hover:underline"
+          >
+            Ver publicación original
+          </a>
         </div>
-    </footer>
+      </footer>
+    </article>
+  </main>
 
-    <script>
-        // Script para el menú móvil
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+  <footer class="bg-slate-900 text-slate-300 mt-14">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">GuíaCanina</h3>
+          <p class="text-sm leading-7">
+            Conocimiento abierto, basado en ciencia del comportamiento y bienestar animal.
+          </p>
+        </div>
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Copiar el footer para no repetirlo
-         const mainFooter = document.querySelector('footer.bg-slate-800 .container');
-         if (mainFooter) {
-            const articleFooterContainer = document.querySelector('article + footer .container');
-            if(articleFooterContainer) {
-                articleFooterContainer.innerHTML = mainFooter.innerHTML;
-            }
-         }
-    </script>
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">Explora</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="guia.html" class="footer-link">La Guía Completa</a></li>
+            <li><a href="blog.html" class="footer-link">Blog Científico</a></li>
+            <li><a href="servicios.html" class="footer-link">Mis Servicios</a></li>
+            <li><a href="sobre-mi.html" class="footer-link">Sobre Mí</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">Apoya</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="apoyame.html" class="footer-link">Haz una Donación</a></li>
+            <li><a href="#" class="footer-link">Aviso Legal</a></li>
+            <li><a href="#" class="footer-link">Política de Privacidad</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">Sígueme</h3>
+          <div class="flex space-x-4">
+            <a href="#" aria-label="Instagram" class="hover:text-white">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.58 0 9.22.01 8.16.06c-1.15.05-1.94.22-2.6.47a6.9 6.9 0 00-2.18 1.62A6.9 6.9 0 001.74 6.3c-.25.66-.42 1.45-.47 2.6C1.21 9.94 1.19 10.3 1.19 12.72s.02 2.78.07 3.84c.05 1.15.22 1.94.47 2.6a6.9 6.9 0 001.62 2.18 6.9 6.9 0 002.18 1.62c.66.25 1.45.42 2.6.47 1.06.05 1.42.06 3.84.06s2.78-.01 3.84-.06c1.15-.05 1.94-.22 2.6-.47a6.9 6.9 0 002.18-1.62 6.9 6.9 0 001.62-2.18c.25-.66.42-1.45.47-2.6.05-1.06.06-1.42.06-3.84s-.01-2.78-.06-3.84c-.05-1.15-.22-1.94-.47-2.6A6.9 6.9 0 0021.5 4.48a6.9 6.9 0 00-2.18-1.62c-.66-.25-1.45-.42-2.6-.47C15.56.01 15.2 0 12.72 0H12z" clip-rule="evenodd"></path>
+                <path d="M12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zM12 15a3 3 0 110-6 3 3 0 010 6z"></path>
+                <path d="M16.862 6.225a1.238 1.238 0 100-2.475 1.238 1.238 0 000 2.475z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-700 mt-8 pt-6 text-center text-sm">
+        <p>&copy; 2026 GuíaCanina. Un proyecto de Jenner Feijoo.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const progressBar = document.getElementById("progress-bar");
+
+    mobileMenuButton?.addEventListener("click", () => {
+      const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
+      mobileMenuButton.setAttribute("aria-expanded", String(!isExpanded));
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+    }
+
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+  </script>
 </body>
 </html>
