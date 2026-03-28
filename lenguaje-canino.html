@@ -1,253 +1,983 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía Completa del Lenguaje Canino | GuíaCanina Abierta</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .prose h2 {
-            font-size: 1.875rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            margin-top: 2.5rem;
-            color: #1e293b; /* slate-800 */
-        }
-        .prose h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            margin-top: 2rem;
-            color: #334155; /* slate-700 */
-        }
-        .prose strong {
-            color: #0f172a; /* slate-900 */
-        }
-        .prose a {
-            color: #0284c7; /* sky-600 */
-            text-decoration: none;
-        }
-        .prose a:hover {
-            text-decoration: underline;
-        }
-        .prose ul > li::before {
-             background-color: #0284c7; /* sky-600 */
-        }
-        .sticky-nav {
-            position: sticky;
-            top: 100px; /* Adjust based on header height */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía Completa del Lenguaje Canino | GuíaCanina Abierta</title>
+  <meta name="description" content="Guía extensa y basada en ciencia para interpretar el lenguaje corporal, vocal y olfativo del perro, reconocer estrés, señales de calma, umbral, juego, miedo y prevención de conflictos." />
+  <meta name="keywords" content="lenguaje canino, señales de calma, estrés canino, comunicación canina, BAT, comportamiento canino, bienestar animal" />
+  <meta name="author" content="Jenner Feijoo" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta property="og:title" content="Guía Completa del Lenguaje Canino" />
+  <meta property="og:description" content="Aprende a leer a tu perro con una guía extensa, clara y respetuosa." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_ES" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --slate-50:#f8fafc;
+      --slate-100:#f1f5f9;
+      --slate-200:#e2e8f0;
+      --slate-300:#cbd5e1;
+      --slate-500:#64748b;
+      --slate-700:#334155;
+      --slate-800:#1e293b;
+      --slate-900:#0f172a;
+      --sky-500:#0ea5e9;
+      --sky-600:#0284c7;
+      --emerald-500:#10b981;
+      --amber-500:#f59e0b;
+      --rose-500:#f43f5e;
+      --violet-500:#8b5cf6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-700);
+    }
+
+    .prose-custom h2 {
+      font-size: clamp(1.75rem, 2vw, 2.15rem);
+      line-height: 1.2;
+      font-weight: 800;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: var(--slate-900);
+    }
+
+    .prose-custom h3 {
+      font-size: clamp(1.25rem, 1.7vw, 1.5rem);
+      line-height: 1.3;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: .75rem;
+      color: var(--slate-800);
+    }
+
+    .prose-custom h4 {
+      font-size: 1.05rem;
+      line-height: 1.4;
+      font-weight: 700;
+      margin-top: 1.35rem;
+      margin-bottom: .5rem;
+      color: var(--slate-800);
+    }
+
+    .prose-custom p {
+      margin: 0 0 1rem 0;
+      line-height: 1.8;
+    }
+
+    .prose-custom ul,
+    .prose-custom ol {
+      margin: 0 0 1rem 0;
+      padding-left: 1.2rem;
+    }
+
+    .prose-custom li {
+      margin-bottom: .55rem;
+      line-height: 1.75;
+    }
+
+    .prose-custom strong {
+      color: var(--slate-900);
+    }
+
+    .prose-custom a {
+      color: var(--sky-600);
+      text-decoration: none;
+    }
+
+    .prose-custom a:hover,
+    .prose-custom a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 6.2rem;
+      max-height: calc(100vh - 7rem);
+      overflow: auto;
+      scrollbar-width: thin;
+    }
+
+    .section-anchor {
+      scroll-margin-top: 7rem;
+    }
+
+    .toc-link.active {
+      color: var(--sky-600);
+      font-weight: 700;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 1rem;
+      box-shadow: 0 10px 35px rgba(15, 23, 42, .06);
+    }
+
+    .mini-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--slate-200);
+      border-radius: .9rem;
+      padding: 1rem;
+    }
+
+    .callout {
+      border-left: 4px solid var(--sky-500);
+      background: #f0f9ff;
+      padding: 1rem 1rem 1rem 1.1rem;
+      border-radius: .8rem;
+      margin: 1.2rem 0;
+    }
+
+    .callout-warning {
+      border-left-color: var(--amber-500);
+      background: #fff7ed;
+    }
+
+    .callout-danger {
+      border-left-color: var(--rose-500);
+      background: #fff1f2;
+    }
+
+    .callout-success {
+      border-left-color: var(--emerald-500);
+      background: #ecfdf5;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .8rem;
+      font-weight: 700;
+      border-radius: 9999px;
+      padding: .35rem .75rem;
+    }
+
+    .badge-sky { background: #e0f2fe; color: #075985; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-rose { background: #ffe4e6; color: #9f1239; }
+    .badge-emerald { background: #d1fae5; color: #065f46; }
+    .badge-violet { background: #ede9fe; color: #5b21b6; }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+    }
+
+    table.guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: .9rem;
+      overflow: hidden;
+    }
+
+    .guide-table th,
+    .guide-table td {
+      text-align: left;
+      padding: .95rem 1rem;
+      border-bottom: 1px solid var(--slate-200);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .guide-table th {
+      background: var(--slate-100);
+      color: var(--slate-900);
+      font-size: .95rem;
+    }
+
+    details.faq,
+    details.fold {
+      border: 1px solid var(--slate-200);
+      border-radius: .9rem;
+      background: white;
+      padding: .9rem 1rem;
+      margin-bottom: .85rem;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--slate-900);
+      list-style: none;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+
+    .hero-grid {
+      background:
+        radial-gradient(circle at top left, rgba(14,165,233,.08), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(16,185,129,.08), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, var(--sky-500), var(--emerald-500));
+      z-index: 100;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 1rem;
+      background: white;
+      color: black;
+      padding: .75rem 1rem;
+      border-radius: .5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+      z-index: 200;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+    }
+
+    .kpi {
+      border: 1px solid var(--slate-200);
+      border-radius: 1rem;
+      background: white;
+      padding: 1rem;
+    }
+
+    .figure-box {
+      background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+      border: 1px solid var(--slate-200);
+      border-radius: 1rem;
+      padding: 1rem;
+    }
+
+    .checklist li::marker { color: var(--sky-600); }
+    .danger-list li::marker { color: var(--rose-500); }
+
+    code.inline-code {
+      background: var(--slate-100);
+      color: var(--slate-900);
+      padding: .15rem .4rem;
+      border-radius: .35rem;
+      font-size: .92em;
+    }
+
+    .footnote {
+      font-size: .95rem;
+      color: var(--slate-500);
+    }
+
+    @media (max-width: 1023px) {
+      .sticky-nav {
+        position: static;
+        max-height: none;
+        overflow: visible;
+      }
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-700">
+<body>
+  <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido</a>
 
-    <!-- Header y Navegación -->
-    <header class="bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-slate-900">GuíaCanina</a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="guia.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">La Guía</a>
-                <a href="blog.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Blog Científico</a>
-                <a href="servicios.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Mis Servicios</a>
-                <a href="sobre-mi.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Sobre Mí</a>
-                <a href="apoyame.html" class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 font-semibold transition duration-300 shadow">Apoya el Proyecto</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-slate-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
-            </button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3">
-             <a href="guia.html" class="block text-slate-600 hover:text-sky-600 font-medium">La Guía</a>
-             <a href="blog.html" class="block text-slate-600 hover:text-sky-600 font-medium">Blog Científico</a>
-             <a href="servicios.html" class="block text-slate-600 hover:text-sky-600 font-medium">Mis Servicios</a>
-             <a href="sobre-mi.html" class="block text-slate-600 hover:text-sky-600 font-medium">Sobre Mí</a>
-             <a href="apoyame.html" class="block bg-emerald-500 text-white px-4 py-2 rounded-lg text-center font-semibold hover:bg-emerald-600">Apoya el Proyecto</a>
+  <header class="bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50 border-b border-slate-200">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-extrabold text-slate-900 tracking-tight">GuíaCanina</a>
+
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="guia.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">La Guía</a>
+        <a href="blog.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Blog Científico</a>
+        <a href="servicios.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Mis Servicios</a>
+        <a href="sobre-mi.html" class="text-slate-600 hover:text-sky-600 font-medium transition duration-300">Sobre Mí</a>
+        <a href="apoyame.html" class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 font-semibold transition duration-300 shadow">Apoya el Proyecto</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" class="hidden sm:inline-flex items-center justify-center rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50" aria-label="Cambiar tema">
+          Tema
+        </button>
+        <button id="mobile-menu-button" class="md:hidden text-slate-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3 border-t border-slate-200">
+      <a href="guia.html" class="block text-slate-600 hover:text-sky-600 font-medium pt-3">La Guía</a>
+      <a href="blog.html" class="block text-slate-600 hover:text-sky-600 font-medium">Blog Científico</a>
+      <a href="servicios.html" class="block text-slate-600 hover:text-sky-600 font-medium">Mis Servicios</a>
+      <a href="sobre-mi.html" class="block text-slate-600 hover:text-sky-600 font-medium">Sobre Mí</a>
+      <a href="apoyame.html" class="block bg-emerald-500 text-white px-4 py-2 rounded-lg text-center font-semibold hover:bg-emerald-600">Apoya el Proyecto</a>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="container mx-auto px-6 py-10 md:py-14">
+    <section class="hero-grid card p-8 md:p-10 mb-10">
+      <div class="grid lg:grid-cols-[1.5fr_.9fr] gap-8 items-start">
+        <div>
+          <span class="badge badge-sky mb-4">Guía extensa · lectura práctica</span>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4">Guía Completa del Lenguaje Canino</h1>
+          <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl">
+            Aprende a interpretar el cuerpo, la voz, el movimiento, la distancia y el uso del olfato de tu perro para prevenir conflictos, mejorar la convivencia y responder de forma respetuosa, segura y basada en comportamiento.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#introduccion" class="inline-flex items-center rounded-lg bg-slate-900 px-5 py-3 text-white font-semibold hover:bg-slate-800">Empezar la guía</a>
+            <a href="#faq" class="inline-flex items-center rounded-lg border border-slate-300 px-5 py-3 text-slate-700 font-semibold hover:bg-white">Ir a preguntas frecuentes</a>
+          </div>
         </div>
-    </header>
 
-    <main class="container mx-auto px-6 py-12 md:py-16">
-        <div class="flex flex-col lg:flex-row gap-12">
-            <!-- Columna de Navegación Izquierda (Sticky) -->
-            <aside class="lg:w-1/4">
-                <div class="sticky-nav">
-                    <h3 class="text-lg font-bold text-slate-900 mb-4">En esta guía</h3>
-                    <nav>
-                        <ul class="space-y-3">
-                            <li><a href="#introduccion" class="font-medium text-slate-600 hover:text-sky-600">Introducción: El Arte de Escuchar</a></li>
-                            <li><a href="#comunicacion-visual" class="font-medium text-slate-600 hover:text-sky-600">1. Comunicación Visual: El Cuerpo Habla</a>
-                                <ul class="ml-4 mt-2 space-y-2 text-sm">
-                                    <li><a href="#visual-cola" class="text-slate-500 hover:text-sky-600">La Cola: Un Barómetro Emocional</a></li>
-                                    <li><a href="#visual-orejas" class="text-slate-500 hover:text-sky-600">Las Orejas: Antenas de Intención</a></li>
-                                    <li><a href="#visual-ojos" class="text-slate-500 hover:text-sky-600">Los Ojos: Ventanas del Alma</a></li>
-                                    <li><a href="#visual-boca" class="text-slate-500 hover:text-sky-600">La Boca: Sonrisas, Tensión y Estrés</a></li>
-                                    <li><a href="#visual-postura" class="text-slate-500 hover:text-sky-600">La Postura Corporal General</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#senales-de-calma" class="font-medium text-slate-600 hover:text-sky-600">2. Las Señales de Calma</a></li>
-                            <li><a href="#comunicacion-vocal" class="font-medium text-slate-600 hover:text-sky-600">3. Comunicación Vocal</a></li>
-                            <li><a href="#comunicacion-olfativa" class="font-medium text-slate-600 hover:text-sky-600">4. Comunicación Olfativa</a></li>
-                            <li><a href="#conclusion" class="font-medium text-slate-600 hover:text-sky-600">Conclusión: Ser un Mejor Intérprete</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </aside>
-
-            <!-- Columna de Contenido Principal -->
-            <article class="lg:w-3/4 bg-white p-8 md:p-12 rounded-xl shadow-lg prose prose-lg max-w-none">
-                
-                <header>
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Guía Completa del Lenguaje Canino</h1>
-                    <p class="text-xl text-slate-600">Aprende a interpretar el complejo y sutil mundo de la comunicación de tu perro para construir un vínculo inquebrantable.</p>
-                </header>
-                
-                <hr class="my-8">
-
-                <section id="introduccion">
-                    <h2>Introducción: El Arte de Escuchar con los Ojos</h2>
-                    <p>Los perros se comunican constantemente, no solo entre ellos, sino también con nosotros. Sin embargo, su lenguaje principal no es verbal; es un complejo ballet de posturas corporales, expresiones faciales y señales sutiles. Aprender a "escuchar" este lenguaje es la piedra angular para una convivencia armoniosa, resolver problemas de comportamiento y, lo más importante, entender las necesidades y emociones de nuestro compañero.</p>
-                    <p>En esta guía, nos sumergiremos en el fascinante mundo de la comunicación canina, desglosando las señales clave para que puedas convertirte en un intérprete experto del lenguaje de tu perro.</p>
-                </section>
-
-                <section id="comunicacion-visual">
-                    <h2>1. Comunicación Visual: El Cuerpo Habla</h2>
-                    <p>La comunicación visual es el canal de información más rico y detallado de los perros. Desde la punta de la cola hasta la tensión de sus bigotes, cada parte de su cuerpo contribuye a la conversación.</p>
-                    
-                    <img src="https://placehold.co/800x400/a5b4fc/334155?text=Posturas+Caninas" alt="Esquema de posturas corporales caninas" class="rounded-lg shadow-md my-6">
-                    
-                    <h3 id="visual-cola">La Cola: Un Barómetro Emocional</h3>
-                    <p>Contrario a la creencia popular, un movimiento de cola no siempre significa felicidad. La altura, velocidad y rigidez del movimiento nos dan pistas mucho más precisas:</p>
-                    <ul>
-                        <li><strong>Posición alta y movimiento rápido:</strong> Excitación, estado de alerta alto. Si la cola está rígida y erguida, puede indicar una advertencia.</li>
-                        <li><strong>Posición media, movimiento relajado y amplio:</strong> Estado de ánimo neutral a feliz, amistoso. El famoso "saludo".</li>
-                        <li><strong>Posición baja o entre las patas:</strong> Inseguridad, miedo, sumisión. Un perro que esconde la cola está comunicando que no es una amenaza.</li>
-                        <li><strong>Movimiento circular ("helicóptero"):</strong> Generalmente una señal de extrema felicidad y amistad, común al saludar a personas muy queridas.</li>
-                    </ul>
-
-                    <h3 id="visual-orejas">Las Orejas: Antenas de Intención</h3>
-                    <p>La posición de las orejas es un indicador rápido del foco de atención y el estado emocional del perro:</p>
-                    <ul>
-                        <li><strong>Hacia adelante:</strong> Interés, atención, confianza. El perro está enfocado en algo frente a él.</li>
-                        <li><strong>Aplanadas hacia atrás:</strong> Miedo, apaciguamiento, intención amistosa. En un contexto de saludo, puede ser una señal de "vengo en son de paz". Si el cuerpo está tenso, indica miedo.</li>
-                        <li><strong>"Orejas de avión" (hacia los lados):</strong> Inseguridad, conflicto emocional o a veces simplemente relajación.</li>
-                    </ul>
-
-                    <h3 id="visual-ojos">Los Ojos: Ventanas del Alma (y del Estrés)</h3>
-                    <p>Los ojos de un perro pueden transmitir una cantidad asombrosa de información:</p>
-                    <ul>
-                        <li><strong>Mirada suave, pupilas normales:</strong> Relajación, confianza.</li>
-                        <li><strong>"Ojo de ballena" (se ve el blanco de los ojos):</strong> Ansiedad, estrés, miedo. El perro gira la cabeza pero mantiene la mirada en lo que le preocupa. Es una señal clara de incomodidad.</li>
-                        <li><strong>Mirada fija y dura, pupilas dilatadas:</strong> Amenaza, advertencia. Es una señal de que el perro está a punto de reaccionar defensivamente. Evita siempre el contacto visual directo y prolongado con un perro que no conoces.</li>
-                        <li><strong>Parpadeo, entrecerrar los ojos:</strong> Señal de apaciguamiento, busca calmar una situación.</li>
-                    </ul>
-
-                    <h3 id="visual-boca">La Boca: Sonrisas, Tensión y Estrés</h3>
-                    <ul>
-                        <li><strong>Boca relajada, ligeramente abierta:</strong> Un perro tranquilo y contento.</li>
-                        <li><strong>Boca cerrada, labios apretados:</strong> Tensión, alerta.</li>
-                        <li><strong>Lamerse el hocico (lip lick):</strong> Una de las señales de calma más comunes. Indica estrés o incomodidad. No es que tenga hambre.</li>
-                        <li><strong>Bostezo:</strong> Aunque puede ser por sueño, en contextos sociales es una señal de estrés o para calmar a otros.</li>
-                        <li><strong>Levantar los belfos (enseñar los dientes):</strong> Es una advertencia clara. Es crucial diferenciar entre una "sonrisa" sumisa (comisuras muy hacia atrás) y una amenaza (nariz arrugada, gruñido). <strong>Nunca castigues un gruñido</strong>; es una comunicación vital que previene una mordida.</li>
-                    </ul>
-                    
-                    <h3 id="visual-postura">La Postura Corporal General</h3>
-                    <p>La postura completa nos da el contexto final:</p>
-                    <ul>
-                        <li><strong>Postura confiada:</strong> Cuerpo erguido, peso hacia adelante, cabeza y cola altas.</li>
-                        <li><strong>Postura temerosa:</strong> Cuerpo agachado, peso hacia atrás, cola baja, cabeza gacha.</li>
-                        <li><strong>Invitación al juego (Play Bow):</strong> Parte delantera del cuerpo agachada con el trasero en alto. Es una señal universal y clara para iniciar el juego.</li>
-                    </ul>
-                </section>
-                
-                <section id="senales-de-calma">
-                    <h2>2. Las Señales de Calma: El Lenguaje de la Paz</h2>
-                    <p>Popularizadas por la etóloga Turid Rugaas, las "señales de calma" son un conjunto de gestos que los perros usan para evitar conflictos, calmarse a sí mismos y comunicar intenciones pacíficas a otros. Reconocerlas es fundamental.</p>
-                    <p>Además del bostezo y el lamido de hocico, algunas de las más importantes son:</p>
-                    <ul>
-                        <li><strong>Girar la cabeza:</strong> Desviar la mirada o girar completamente la cabeza para evitar la confrontación.</li>
-                        <li><strong>Olfatear el suelo:</strong> De repente, mostrar un gran interés en olfatear el suelo sin razón aparente, para ignorar una situación estresante.</li>
-                        <li><strong>Caminar en curva:</strong> Acercarse a otro perro o persona en un arco, en lugar de una línea recta, que es más amenazante.</li>
-                        <li><strong>Moverse lentamente:</strong> Ralentizar todos sus movimientos para mostrar que no es una amenaza.</li>
-                        <li><strong>Sentarse o tumbarse:</strong> Exponer su vulnerabilidad para calmar una situación tensa.</li>
-                    </ul>
-                </section>
-
-                <section id="comunicacion-vocal">
-                    <h2>3. Comunicación Vocal</h2>
-                    <p>Aunque secundaria, la comunicación vocal es importante:</p>
-                    <ul>
-                        <li><strong>Ladrido:</strong> Puede significar alerta, juego, demanda o soledad. La tonalidad y frecuencia varían. Un ladrido agudo y repetitivo suele ser de excitación, mientras que uno grave y espaciado es de advertencia.</li>
-                        <li><strong>Gruñido:</strong> Es una advertencia clara de "detente" o "aléjate". Es una comunicación esencial que debemos agradecer y respetar.</li>
-                        <li><strong>Lloriqueo/Gemido:</strong> Puede indicar dolor, ansiedad, necesidad o excitación.</li>
-                    </ul>
-                </section>
-
-                <section id="comunicacion-olfativa">
-                    <h2>4. Comunicación Olfativa: El Mundo en Olores</h2>
-                    <p>El olfato es el sentido más desarrollado del perro. A través de la orina, las heces y las glándulas corporales, dejan "mensajes" detallados para otros perros sobre su identidad, estado sexual y emocional. Permitir que tu perro olfatee durante el paseo es una necesidad fundamental; es su forma de leer las "noticias del barrio".</p>
-                </section>
-
-                <section id="conclusion">
-                    <h2>Conclusión: Conviértete en un Mejor Intérprete</h2>
-                    <p>Entender a tu perro es un viaje de observación constante. No hay un diccionario perfecto, ya que el contexto lo es todo. Una misma señal puede significar cosas diferentes dependiendo de la situación y del resto del lenguaje corporal.</p>
-                    <p><strong>Tu tarea como su compañero es simple: observa más.</strong> Observa en el parque, en casa, con visitas. Empieza a notar los pequeños detalles. Cuando tu perro se lame el hocico, ¿qué acaba de pasar? Cuando gira la cabeza, ¿a qué está respondiendo? Al hacerte estas preguntas, empezarás a ver patrones y a entender el increíblemente rico mundo interior de tu perro, fortaleciendo vuestro vínculo como nunca antes.</p>
-                </section>
-
-            </article>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
+          <div class="kpi">
+            <p class="text-sm uppercase tracking-wide text-slate-500 font-semibold">Objetivo principal</p>
+            <p class="mt-2 text-slate-900 font-bold text-lg">Leer contexto, no señales aisladas</p>
+          </div>
+          <div class="kpi">
+            <p class="text-sm uppercase tracking-wide text-slate-500 font-semibold">Regla clave</p>
+            <p class="mt-2 text-slate-900 font-bold text-lg">Seguridad y umbral primero</p>
+          </div>
+          <div class="kpi">
+            <p class="text-sm uppercase tracking-wide text-slate-500 font-semibold">Error frecuente</p>
+            <p class="mt-2 text-slate-900 font-bold text-lg">Confundir excitación con bienestar</p>
+          </div>
         </div>
-    </main>
+      </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-800 text-slate-300">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">GuíaCanina</h3>
-                    <p class="text-sm">Conocimiento abierto, basado en ciencia y empatía, para mejorar la vida de los perros.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">Explora</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="guia.html" class="hover:text-white">La Guía Completa</a></li>
-                        <li><a href="blog.html" class="hover:text-white">Blog Científico</a></li>
-                        <li><a href="servicios.html" class="hover:text-white">Mis Servicios</a></li>
-                        <li><a href="sobre-mi.html" class="hover:text-white">Sobre Mí</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">Apoya</h3>
-                     <ul class="space-y-2 text-sm">
-                        <li><a href="apoyame.html" class="hover:text-white">Haz una Donación</a></li>
-                        <li><a href="#" class="hover:text-white">Aviso Legal</a></li>
-                        <li><a href="#" class="hover:text-white">Política de Privacidad</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">Sígueme</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" aria-label="Instagram"><svg class="h-6 w-6 hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.58 0 9.22.01 8.16.06c-1.15.05-1.94.22-2.6.47a6.9 6.9 0 00-2.18 1.62A6.9 6.9 0 001.74 6.3c-.25.66-.42 1.45-.47 2.6C1.21 9.94 1.19 10.3 1.19 12.72s.02 2.78.07 3.84c.05 1.15.22 1.94.47 2.6a6.9 6.9 0 001.62 2.18 6.9 6.9 0 002.18 1.62c.66.25 1.45.42 2.6.47 1.06.05 1.42.06 3.84.06s2.78-.01 3.84-.06c1.15-.05 1.94-.22 2.6-.47a6.9 6.9 0 002.18-1.62 6.9 6.9 0 001.62-2.18c.25-.66.42-1.45.47-2.6.05-1.06.06-1.42.06-3.84s-.01-2.78-.06-3.84c-.05-1.15-.22-1.94-.47-2.6A6.9 6.9 0 002.15 4.48a6.9 6.9 0 00-2.18-1.62c-.66-.25-1.45-.42-2.6-.47C15.56.01 15.2 0 12.72 0H12z" clip-rule="evenodd" /><path d="M12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zM12 15a3 3 0 110-6 3 3 0 010 6z" /><path d="M16.862 6.225a1.238 1.238 0 100-2.475 1.238 1.238 0 000 2.475z" /></svg></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-slate-700 mt-8 pt-6 text-center text-sm">
-                <p>&copy; 2024 GuíaCanina. Un proyecto de [Tu Nombre].</p>
-            </div>
+    <div class="flex flex-col lg:flex-row gap-10">
+      <aside class="lg:w-[28%] xl:w-[24%]">
+        <div class="sticky-nav card p-5">
+          <div class="flex items-center justify-between gap-3 mb-4">
+            <h2 class="text-lg font-extrabold text-slate-900">En esta guía</h2>
+            <button id="expand-all" class="text-sm font-semibold text-sky-600 hover:underline">Expandir FAQ</button>
+          </div>
+
+          <nav aria-label="Tabla de contenidos">
+            <ul class="space-y-2 text-sm">
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#introduccion">Introducción: cómo leer a un perro</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#principios">Principios de interpretación</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#comunicacion-visual">1. Comunicación visual</a></li>
+              <li><a class="toc-link text-slate-500 hover:text-sky-600 ml-3" href="#visual-cola">La cola</a></li>
+              <li><a class="toc-link text-slate-500 hover:text-sky-600 ml-3" href="#visual-orejas">Las orejas</a></li>
+              <li><a class="toc-link text-slate-500 hover:text-sky-600 ml-3" href="#visual-ojos">Los ojos</a></li>
+              <li><a class="toc-link text-slate-500 hover:text-sky-600 ml-3" href="#visual-boca">La boca</a></li>
+              <li><a class="toc-link text-slate-500 hover:text-sky-600 ml-3" href="#visual-postura">La postura</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#senales-de-calma">2. Señales de calma y apaciguamiento</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#estres-umbral">3. Estrés, activación y umbral</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#juego">4. Juego vs tensión</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#comunicacion-vocal">5. Comunicación vocal</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#comunicacion-olfativa">6. Comunicación olfativa</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#mitos">7. Mitos frecuentes</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#situaciones">8. Qué hacer en situaciones comunes</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#checklist">9. Checklist de observación</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#faq">10. Preguntas frecuentes</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#bibliografia">Bibliografía orientativa</a></li>
+              <li><a class="toc-link text-slate-600 hover:text-sky-600" href="#conclusion">Conclusión</a></li>
+            </ul>
+          </nav>
         </div>
-    </footer>
+      </aside>
 
-    <script>
-        // Script para el menú móvil
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+      <article class="lg:w-[72%] xl:w-[76%] card p-7 md:p-10 prose-custom max-w-none">
+        <section id="introduccion" class="section-anchor">
+          <h2>Introducción: leer a un perro no es memorizar un diccionario</h2>
+          <p>
+            Un perro no se expresa con palabras, pero está comunicando todo el tiempo. La dificultad es que muchas personas intentan interpretar una sola señal aislada —por ejemplo, una cola que se mueve— y extraen una conclusión demasiado rápida. La lectura correcta exige integrar <strong>contexto, distancia, postura, ritmo de movimiento, tensión muscular, respiración, dirección de la mirada y secuencia completa</strong>.
+          </p>
+          <p>
+            En otras palabras: no basta con mirar <em>qué</em> hace el perro; hay que observar <em>cómo</em>, <em>cuándo</em>, <em>frente a qué</em> y <em>qué ocurre justo después</em>. Esa forma de leer conducta encaja con una visión etológica y de bienestar: comprender al perro como un animal con necesidades, emociones y estrategias de adaptación, no como una máquina que “desobedece” por maldad.
+          </p>
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
+          <div class="callout">
+            <p><strong>Idea central de toda esta página:</strong> una misma señal puede significar cosas distintas según el resto del cuerpo y el entorno. La cola alta no significa siempre “seguridad”. El jadeo no significa siempre “calor”. El acercamiento no significa siempre “amistad”.</p>
+          </div>
+        </section>
+
+        <section id="principios" class="section-anchor">
+          <h2>Principios básicos para interpretar bien</h2>
+
+          <div class="grid md:grid-cols-2 gap-4 my-6">
+            <div class="mini-card">
+              <h3 class="!mt-0">1. Mira el perro entero</h3>
+              <p>No interpretes cola, hocico u orejas por separado. La expresión corporal es una configuración global.</p>
+            </div>
+            <div class="mini-card">
+              <h3 class="!mt-0">2. Mira la secuencia</h3>
+              <p>La conducta tiene estructura temporal: orientación, tensión, señal de apaciguamiento, retirada, explosión, recuperación.</p>
+            </div>
+            <div class="mini-card">
+              <h3 class="!mt-0">3. Mira el contexto</h3>
+              <p>Casa, calle, parque, veterinario, visitas, correa, distancia y historial cambian el significado de una misma señal.</p>
+            </div>
+            <div class="mini-card">
+              <h3 class="!mt-0">4. Mira el umbral</h3>
+              <p>La capacidad de pensar, responder y regularse cae cuando el perro supera su umbral emocional.</p>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>Pregunta útil</th>
+                  <th>Qué te ayuda a detectar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>¿Qué ocurrió justo antes?</td>
+                  <td>Disparador probable: persona, perro, ruido, manipulación, acercamiento, recurso, sorpresa.</td>
+                </tr>
+                <tr>
+                  <td>¿El cuerpo se ve suelto o rígido?</td>
+                  <td>Nivel de activación y riesgo de escalada.</td>
+                </tr>
+                <tr>
+                  <td>¿Puede apartar la mirada, oler el suelo, responder a su guía?</td>
+                  <td>Capacidad de regulación; posible trabajo subumbral.</td>
+                </tr>
+                <tr>
+                  <td>¿La conducta disminuye o empeora si aumenta la proximidad?</td>
+                  <td>Importancia de la distancia como herramienta de manejo.</td>
+                </tr>
+                <tr>
+                  <td>¿La recuperación tarda segundos o minutos?</td>
+                  <td>Carga emocional total y dificultad real del escenario.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="comunicacion-visual" class="section-anchor">
+          <h2>1. Comunicación visual: el cuerpo habla antes que la voz</h2>
+          <p>
+            La mayor parte de la información útil para tutores y profesionales está en el cuerpo. Los perros usan postura, velocidad, microgestos faciales, trayectoria de aproximación, uso del espacio y cambios de tensión muscular para negociar interacciones y reducir incertidumbre.
+          </p>
+
+          <div class="figure-box my-6">
+            <p class="font-bold text-slate-900 mb-2">Lectura rápida del cuerpo</p>
+            <p class="mb-0 text-slate-700">Suelto + curvo + pausado suele indicar mayor seguridad funcional. Rígido + frontal + directo + rápido suele aumentar el riesgo de conflicto.</p>
+          </div>
+
+          <h3 id="visual-cola" class="section-anchor">La cola: posición, amplitud y textura del movimiento</h3>
+          <p>
+            La cola no es un medidor simple de “felicidad”. Aporta información sobre <strong>activación, intención, balance emocional y estabilidad</strong>. Un perro puede mover la cola y seguir incómodo, excitado o incluso dispuesto a lanzar una advertencia.
+          </p>
+          <ul>
+            <li><strong>Cola media y suelta:</strong> suele acompañar un estado funcionalmente neutro o socialmente cómodo.</li>
+            <li><strong>Cola alta y rígida:</strong> puede indicar activación elevada, vigilancia, tensión o exhibición social.</li>
+            <li><strong>Cola baja o recogida:</strong> inseguridad, miedo, retirada o intento de hacerse menos visible.</li>
+            <li><strong>Movimiento amplio y flexible:</strong> mayor soltura corporal, especialmente si el resto del cuerpo también está blando.</li>
+            <li><strong>Movimiento corto, rápido y tenso:</strong> excitación o tensión; no asumir bienestar.</li>
+            <li><strong>“Helicóptero” o movimiento circular amplio:</strong> suele verse en saludos muy afiliativos y seguros.</li>
+          </ul>
+
+          <div class="callout-warning">
+            <p><strong>Error común:</strong> “mueve la cola, así que está bien”. No necesariamente. Mira la base de la cola, la espalda, la boca, la velocidad del acercamiento y si puede apartarse.</p>
+          </div>
+
+          <h3 id="visual-orejas" class="section-anchor">Las orejas: foco, intención y conflicto interno</h3>
+          <p>
+            La lectura de orejas depende mucho de la morfología de cada perro, por lo que en perros con orejas caídas hay que fijarse más en la base auricular y en la musculatura de la cara.
+          </p>
+          <ul>
+            <li><strong>Adelantadas:</strong> orientación e interés. No implica por sí solo agresión ni confianza.</li>
+            <li><strong>Hacia atrás:</strong> puede significar miedo, apaciguamiento, preocupación o saludo afiliativo.</li>
+            <li><strong>Laterales (“orejas de avión”):</strong> ambivalencia, incertidumbre o sobrecarga leve.</li>
+            <li><strong>Cambios rápidos de posición:</strong> procesamiento intenso del entorno; atención repartida.</li>
+          </ul>
+
+          <h3 id="visual-ojos" class="section-anchor">Los ojos: atención, presión social y sobrecarga</h3>
+          <p>
+            La mirada importa por intensidad, duración y contexto. En relaciones sociales, una mirada fija y sostenida puede funcionar como presión. La capacidad de <strong>romper contacto visual</strong> suele ser una buena señal de regulación.
+          </p>
+          <ul>
+            <li><strong>Mirada suave, parpadeo normal:</strong> menor tensión.</li>
+            <li><strong>Ojo de ballena:</strong> se observa blanco escleral; suele aparecer cuando el perro evita con la cabeza pero sigue vigilando algo que le incomoda.</li>
+            <li><strong>Mirada fija y dura:</strong> señal de incremento de intensidad; extrema precaución con proximidad.</li>
+            <li><strong>Pupilas dilatadas:</strong> activación; pueden acompañar miedo, excitación o estrés.</li>
+            <li><strong>Entrecerrar los ojos o pestañeo lento:</strong> a veces actúa como señal social de menor presión.</li>
+          </ul>
+
+          <h3 id="visual-boca" class="section-anchor">La boca: relajación, calor, conflicto o estrés</h3>
+          <p>
+            La boca es una de las zonas más informativas. Un mismo perro puede pasar de boca abierta y suelta a labios apretados en menos de un segundo si cambia la carga emocional de la escena.
+          </p>
+          <ul>
+            <li><strong>Boca abierta y comisuras blandas:</strong> mayor relajación, especialmente si la respiración es regular y el resto del cuerpo acompaña.</li>
+            <li><strong>Boca cerrada de golpe:</strong> suele ser un marcador temprano de cambio emocional.</li>
+            <li><strong>Labios tensos o retraídos:</strong> alerta, conflicto, anticipación o miedo.</li>
+            <li><strong>Lamerse el hocico:</strong> puede ser parte de señales de apaciguamiento o de anticipación alimentaria; el contexto decide.</li>
+            <li><strong>Bostezo fuera de contexto de sueño:</strong> con frecuencia aparece en activación o necesidad de descarga/regulación.</li>
+            <li><strong>Mostrar dientes:</strong> no castigues la advertencia. La advertencia es información valiosa que puede preceder a una retirada o a una mordida si no se respeta.</li>
+          </ul>
+
+          <h3 id="visual-postura" class="section-anchor">La postura general: dónde está el peso del cuerpo</h3>
+          <p>
+            La postura global es la síntesis más útil. Fíjate en si el peso está adelantado o retrasado, si la espalda está suelta o comprimida, si la trayectoria es curva o frontal y si hay congelación momentánea.
+          </p>
+          <div class="table-wrap">
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>Patrón postural</th>
+                  <th>Interpretación probable</th>
+                  <th>Qué hacer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Cuerpo suelto, curva amplia, peso equilibrado</td>
+                  <td>Mayor comodidad social</td>
+                  <td>Mantén distancia funcional y observa la respuesta</td>
+                </tr>
+                <tr>
+                  <td>Peso hacia delante, rigidez, cuello alto</td>
+                  <td>Intensificación, presión, vigilancia</td>
+                  <td>No acerques más; aumenta espacio</td>
+                </tr>
+                <tr>
+                  <td>Peso hacia atrás, cuerpo recogido, cola baja</td>
+                  <td>Miedo o evitación</td>
+                  <td>Quita presión, facilita salida</td>
+                </tr>
+                <tr>
+                  <td>Congelación breve</td>
+                  <td>Momento crítico de evaluación</td>
+                  <td>Interrumpe la situación con calma y distancia</td>
+                </tr>
+                <tr>
+                  <td>Play bow con rebotes y reenganche recíproco</td>
+                  <td>Intención lúdica</td>
+                  <td>Verifica reciprocidad y pausas</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="senales-de-calma" class="section-anchor">
+          <h2>2. Señales de calma, corte y apaciguamiento</h2>
+          <p>
+            Muchas conductas sutiles sirven para <strong>reducir tensión social</strong>, ganar tiempo, bajar intensidad o comunicar que el perro no busca conflicto. En la práctica cotidiana, reconocer estas señales te permite intervenir mucho antes de que aparezcan ladridos, gruñidos o mordidas.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4 my-6">
+            <div class="mini-card">
+              <h3 class="!mt-0">Señales frecuentes</h3>
+              <ul class="mb-0 checklist">
+                <li>Girar la cabeza</li>
+                <li>Desviar la mirada</li>
+                <li>Olfatear el suelo</li>
+                <li>Parpadear</li>
+                <li>Bostezar</li>
+                <li>Lamerse el hocico</li>
+                <li>Caminar en curva</li>
+                <li>Reducir velocidad</li>
+                <li>Sentarse o tumbarse</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <h3 class="!mt-0">Qué significan</h3>
+              <p class="mb-0">No significan siempre “sumisión”. Suelen ser estrategias de regulación y negociación social: “no quiero lío”, “dame espacio”, “bajemos intensidad”, “esto me preocupa”.</p>
+            </div>
+          </div>
+
+          <div class="callout-success">
+            <p><strong>Buena práctica:</strong> si tu perro ofrece señales de corte, tu trabajo no es exigir más exposición. Tu trabajo es <strong>escuchar la información</strong> y ajustar distancia, dificultad o duración.</p>
+          </div>
+        </section>
+
+        <section id="estres-umbral" class="section-anchor">
+          <h2>3. Estrés, activación y umbral</h2>
+          <p>
+            Una guía de lenguaje canino queda incompleta si no explica el concepto de <strong>umbral</strong>. A efectos prácticos, el umbral es el punto a partir del cual el perro deja de procesar bien la situación y empieza a reaccionar desde un estado de defensa, bloqueo o sobreexcitación. Trabajar por debajo de ese punto es básico en educación respetuosa y en protocolos tipo BAT.
+          </p>
+
+          <div class="callout-danger">
+            <p><strong>Regla de seguridad:</strong> un perro por encima de umbral no está en el mejor estado para aprender. En ese momento suele necesitar distancia, alivio y una salida clara, no más presión.</p>
+          </div>
+
+          <h3>Escalera práctica de activación</h3>
+          <div class="table-wrap">
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>Nivel</th>
+                  <th>Señales observables</th>
+                  <th>Interpretación</th>
+                  <th>Qué hacer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Verde</td>
+                  <td>Cuerpo suelto, respiración normal, puede oler y responder</td>
+                  <td>Subumbral</td>
+                  <td>Se puede observar, reforzar calma, seguir con normalidad</td>
+                </tr>
+                <tr>
+                  <td>Amarillo</td>
+                  <td>Fijación breve, boca cierra, cola cambia, peso se adelanta o retrasa</td>
+                  <td>Activación creciente</td>
+                  <td>Aumentar distancia, bajar dificultad, hacer pausa</td>
+                </tr>
+                <tr>
+                  <td>Naranja</td>
+                  <td>Rigidez, jadeo rápido, microcongelación, hipervigilancia</td>
+                  <td>Cerca de umbral</td>
+                  <td>Retirada estratégica inmediata</td>
+                </tr>
+                <tr>
+                  <td>Rojo</td>
+                  <td>Ladrido explosivo, gruñido, embestida, pánico o bloqueo fuerte</td>
+                  <td>Sobre umbral</td>
+                  <td>Salir de la escena con seguridad; no pedir obediencia compleja</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Signos de estrés que muchos tutores pasan por alto</h3>
+          <ul>
+            <li>Jadeo sin calor ni ejercicio proporcional.</li>
+            <li>Sacudida corporal tras una interacción tensa.</li>
+            <li>Sudor en almohadillas o huellas húmedas en suelo liso.</li>
+            <li>Hiperfoco en un estímulo y pérdida de respuesta al entorno.</li>
+            <li>Bostezos, lamidos rápidos, temblor fino o aumento brusco de movimiento.</li>
+            <li>Letargo aparente después de periodos largos de activación o estrés acumulado.</li>
+          </ul>
+        </section>
+
+        <section id="juego" class="section-anchor">
+          <h2>4. Juego real vs tensión disfrazada de juego</h2>
+          <p>
+            No todo lo que parece “juego” es juego equilibrado. A veces lo que vemos es persecución unilateral, invasión, bloqueo, monta, presión social o descarga de excitación. La clave está en la <strong>reciprocidad</strong>.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4 my-6">
+            <div class="mini-card">
+              <h3 class="!mt-0">Indicadores de juego saludable</h3>
+              <ul class="mb-0 checklist">
+                <li>Turnos relativamente equilibrados</li>
+                <li>Pausas voluntarias</li>
+                <li>Reenganche mutuo tras separarse</li>
+                <li>Posturas sueltas y rebotes</li>
+                <li>Autoinhibición y cambios de rol</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <h3 class="!mt-0">Indicadores de desequilibrio</h3>
+              <ul class="mb-0 danger-list">
+                <li>Uno persigue y el otro sólo huye</li>
+                <li>Un perro intenta cortar y el otro insiste</li>
+                <li>Aparece rigidez o congelación</li>
+                <li>Hay vocalización cada vez más tensa</li>
+                <li>No existen pausas espontáneas</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout-warning">
+            <p><strong>Intervén temprano:</strong> separar antes de la explosión no “arruina” el juego. Protege la calidad de las interacciones futuras.</p>
+          </div>
+        </section>
+
+        <section id="comunicacion-vocal" class="section-anchor">
+          <h2>5. Comunicación vocal: ladridos, gruñidos, gemidos y más</h2>
+          <p>
+            La voz aporta matices, pero normalmente debe interpretarse <strong>junto al cuerpo</strong>. Un mismo tipo de vocalización puede tener funciones distintas según el contexto.
+          </p>
+          <ul>
+            <li><strong>Ladrido agudo repetitivo:</strong> excitación, alarma, demanda o frustración.</li>
+            <li><strong>Ladrido grave y espaciado:</strong> advertencia o vigilancia.</li>
+            <li><strong>Gruñido:</strong> mensaje de distancia. Es valioso. No lo castigues.</li>
+            <li><strong>Gemido o lloriqueo:</strong> puede indicar anticipación, ansiedad, frustración o malestar.</li>
+            <li><strong>Bufido, soplido o resoplido:</strong> a veces funcionan como descarga breve de activación.</li>
+          </ul>
+
+          <div class="callout">
+            <p><strong>Regla práctica:</strong> castigar el gruñido puede suprimir la advertencia, pero no el malestar subyacente. El resultado puede ser un perro que avisa menos y muerde más rápido.</p>
+          </div>
+        </section>
+
+        <section id="comunicacion-olfativa" class="section-anchor">
+          <h2>6. Comunicación olfativa: el canal que los humanos más subestimamos</h2>
+          <p>
+            Para el perro, el mundo social también se organiza a través del olor. Permitir olfateo no es un capricho recreativo: es acceso a información. En muchos casos, oler es una forma de explorar, regularse, orientarse y tomar decisiones.
+          </p>
+          <p>
+            Durante el paseo, las marcas de orina, heces, secreciones y olores ambientales funcionan como señales contextuales sobre presencia, estado y actividad de otros individuos. Limitar de forma excesiva el tiempo de olfateo empobrece una necesidad conductual central.
+          </p>
+
+          <div class="figure-box my-6">
+            <p class="font-bold text-slate-900 mb-2">Consecuencia práctica</p>
+            <p class="mb-0">Un paseo de calidad no es sólo avanzar metros. También es permitir lectura olfativa, pausas, exploración y procesamiento del entorno.</p>
+          </div>
+        </section>
+
+        <section id="mitos" class="section-anchor">
+          <h2>7. Mitos frecuentes que conviene sacar de la guía</h2>
+
+          <h3>Mito 1: “si mueve la cola, está feliz”</h3>
+          <p>No. El movimiento de cola indica activación y estado social, pero no por sí solo bienestar.</p>
+
+          <h3>Mito 2: “si bosteza, tiene sueño”</h3>
+          <p>A veces sí. Pero en contexto social también puede ser una señal de regulación o tensión.</p>
+
+          <h3>Mito 3: “hay que corregir el gruñido”</h3>
+          <p>No es buena idea. El gruñido es comunicación preventiva.</p>
+
+          <h3>Mito 4: “si tira hacia un perro, quiere saludar”</h3>
+          <p>Podría ser interés social, pero también frustración, conflicto, sobreexcitación o mala tolerancia a la distancia.</p>
+
+          <h3>Mito 5: “si se tumba boca arriba, siempre es sumisión”</h3>
+          <p>No siempre. Puede ser juego, enfriamiento, evitación, apaciguamiento o una combinación.</p>
+
+          <h3>Mito 6: “para que respete, hay que dominar”</h3>
+          <p>Una relación funcional se construye mejor con seguridad, claridad, predictibilidad, manejo y aprendizaje, no con intimidación.</p>
+        </section>
+
+        <section id="situaciones" class="section-anchor">
+          <h2>8. Qué hacer en situaciones comunes</h2>
+
+          <h3>Cuando tu perro se pone rígido viendo a otro perro</h3>
+          <ol>
+            <li>Deja de acercarte.</li>
+            <li>Aumenta distancia en curva, no tirando frontalmente.</li>
+            <li>Busca que pueda volver a oler, mirar y respirar con más soltura.</li>
+            <li>No obligues al saludo.</li>
+          </ol>
+
+          <h3>Cuando una visita intenta invadirlo</h3>
+          <ol>
+            <li>Explica a la visita que no lo mire fijo ni lo toque de entrada.</li>
+            <li>Permite que el perro observe desde distancia.</li>
+            <li>Facilita una ruta de escape y una zona segura.</li>
+            <li>Acorta la interacción antes de que empeore.</li>
+          </ol>
+
+          <h3>Cuando se sobreexcita en juego</h3>
+          <ol>
+            <li>Interrumpe con pausa breve antes de la escalada.</li>
+            <li>Da tiempo para olfatear, beber o caminar.</li>
+            <li>Reinicia sólo si ambos perros muestran intención recíproca y cuerpo suelto.</li>
+          </ol>
+
+          <h3>Cuando parece “ignorar” una señal conocida en la calle</h3>
+          <p>
+            Antes de concluir que desobedece, revisa el nivel de activación. Un perro muy activado puede no estar en condiciones de responder como lo hace en casa. Primero regula el entorno; después evalúa aprendizaje.
+          </p>
+        </section>
+
+        <section id="checklist" class="section-anchor">
+          <h2>9. Checklist rápido de observación</h2>
+          <p>Úsalo antes de sacar conclusiones:</p>
+          <div class="grid md:grid-cols-2 gap-4 my-6">
+            <div class="mini-card">
+              <ul class="mb-0 checklist">
+                <li>¿Cómo está la boca?</li>
+                <li>¿Cómo está la cola?</li>
+                <li>¿El cuerpo se ve suelto o duro?</li>
+                <li>¿Qué hace con la mirada?</li>
+                <li>¿Puede girar, oler, apartarse?</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <ul class="mb-0 checklist">
+                <li>¿Qué acaba de pasar?</li>
+                <li>¿Cuál es la distancia al estímulo?</li>
+                <li>¿Hay correa, esquina, puerta o restricción?</li>
+                <li>¿La activación sube o baja?</li>
+                <li>¿Se recupera rápido o queda cargado?</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" class="section-anchor">
+          <h2>10. Preguntas frecuentes</h2>
+
+          <details class="faq">
+            <summary>¿Mi perro me lame el hocico o la mano porque me “respeta”?</summary>
+            <p class="mt-3 mb-0">Puede ser afiliación, anticipación, solicitud, apaciguamiento o búsqueda de información olfativa. Evita explicaciones únicas.</p>
+          </details>
+
+          <details class="faq">
+            <summary>¿Es malo que mi perro huela mucho en el paseo?</summary>
+            <p class="mt-3 mb-0">No. En general, el olfateo es una necesidad conductual importante y puede ayudar a regular la activación.</p>
+          </details>
+
+          <details class="faq">
+            <summary>¿Debo dejar que salude a todos los perros?</summary>
+            <p class="mt-3 mb-0">No. La socialidad sana no es saludo indiscriminado. Es capacidad de gestionar presencia, distancia y elección.</p>
+          </details>
+
+          <details class="faq">
+            <summary>¿Qué hago si gruñe cuando lo tocan?</summary>
+            <p class="mt-3 mb-0">Respeta el mensaje, deja de tocar, revisa contexto y considera dolor, miedo, invasión o aprendizaje previo. No castigues la advertencia.</p>
+          </details>
+
+          <details class="faq">
+            <summary>¿La reactividad se cura obligándolo a exponerse?</summary>
+            <p class="mt-3 mb-0">No es una buena estrategia. La exposición sin control puede empeorar el problema. Es preferible trabajar con manejo, distancia y aprendizaje subumbral.</p>
+          </details>
+        </section>
+
+        <section id="bibliografia" class="section-anchor">
+          <h2>Bibliografía orientativa</h2>
+          <p>
+            Esta página puede apoyarse en una visión contemporánea de cognición, bienestar y aprendizaje canino. Para una versión pública del sitio, conviene listar bibliografía al final, con formato limpio y sin saturar el cuerpo principal.
+          </p>
+          <ul>
+            <li>Horowitz, A. (ed.). <em>Domestic Dog Cognition and Behavior</em>. Springer.</li>
+            <li>Stewart, G. <em>Behavior Adjustment Training 2.0</em>. Dogwise.</li>
+            <li>O’Heare, J. <em>Tratado sobre la agresividad canina</em>.</li>
+            <li>Rugaas, T. <em>El lenguaje de los perros: las señales de calma</em>.</li>
+          </ul>
+          <p class="footnote">
+            Consejo técnico: en el sitio final, añade una sección de referencias completas o un artículo complementario tipo “Fuentes y base científica” para no sobrecargar esta página principal.
+          </p>
+        </section>
+
+        <section id="conclusion" class="section-anchor">
+          <h2>Conclusión: el mejor lector canino observa antes de intervenir</h2>
+          <p>
+            Entender el lenguaje canino no consiste en adivinar emociones humanas dentro del perro. Consiste en aprender a leer organización corporal, contexto, estrés, distancia y capacidad de regulación. Cuando haces eso, dejas de reaccionar tarde y empiezas a acompañar mejor.
+          </p>
+          <p>
+            Tu meta no debería ser “controlar cada gesto”, sino construir un sistema de convivencia donde el perro pueda comunicar sin necesidad de escalar. Eso exige atención, respeto, manejo preventivo y la disposición de escuchar incluso las señales pequeñas.
+          </p>
+
+          <div class="callout-success">
+            <p><strong>Resumen final:</strong> observa el cuerpo entero, interpreta en contexto, respeta las señales tempranas y prioriza seguridad y bienestar por encima de la obediencia inmediata.</p>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 mt-14">
+    <div class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">GuíaCanina</h3>
+          <p class="text-sm leading-7">Conocimiento abierto, basado en ciencia del comportamiento, bienestar y comunicación respetuosa perro-humano.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">Explora</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="guia.html" class="hover:text-white">La Guía Completa</a></li>
+            <li><a href="blog.html" class="hover:text-white">Blog Científico</a></li>
+            <li><a href="servicios.html" class="hover:text-white">Mis Servicios</a></li>
+            <li><a href="sobre-mi.html" class="hover:text-white">Sobre Mí</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">Legal y apoyo</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="apoyame.html" class="hover:text-white">Haz una Donación</a></li>
+            <li><a href="#" class="hover:text-white">Aviso Legal</a></li>
+            <li><a href="#" class="hover:text-white">Política de Privacidad</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white mb-4">Sígueme</h3>
+          <div class="flex space-x-4">
+            <a href="#" aria-label="Instagram"><svg class="h-6 w-6 hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.58 0 9.22.01 8.16.06c-1.15.05-1.94.22-2.6.47a6.9 6.9 0 00-2.18 1.62A6.9 6.9 0 001.74 6.3c-.25.66-.42 1.45-.47 2.6C1.21 9.94 1.19 10.3 1.19 12.72s.02 2.78.07 3.84c.05 1.15.22 1.94.47 2.6a6.9 6.9 0 001.62 2.18 6.9 6.9 0 002.18 1.62c.66.25 1.45.42 2.6.47 1.06.05 1.42.06 3.84.06s2.78-.01 3.84-.06c1.15-.05 1.94-.22 2.6-.47a6.9 6.9 0 002.18-1.62 6.9 6.9 0 001.62-2.18c.25-.66.42-1.45.47-2.6.05-1.06.06-1.42.06-3.84s-.01-2.78-.06-3.84c-.05-1.15-.22-1.94-.47-2.6A6.9 6.9 0 002.15 4.48a6.9 6.9 0 00-2.18-1.62c-.66-.25-1.45-.42-2.6-.47C15.56.01 15.2 0 12.72 0H12z" clip-rule="evenodd" /><path d="M12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zM12 15a3 3 0 110-6 3 3 0 010 6z" /><path d="M16.862 6.225a1.238 1.238 0 100-2.475 1.238 1.238 0 000 2.475z" /></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-slate-700 mt-8 pt-6 text-center text-sm">
+        <p>&copy; 2026 GuíaCanina. Un proyecto de Jenner Feijoo.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const progressBar = document.getElementById('progress-bar');
+    const tocLinks = [...document.querySelectorAll('.toc-link')];
+    const sections = [...document.querySelectorAll('.section-anchor')];
+    const expandAllButton = document.getElementById('expand-all');
+    const faqItems = [...document.querySelectorAll('details.faq')];
+    const themeToggle = document.getElementById('theme-toggle');
+
+    mobileMenuButton?.addEventListener('click', () => {
+      const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+      mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = `#${entry.target.id}`;
+        tocLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+      });
+    }, {
+      rootMargin: '-25% 0px -60% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(section => observer.observe(section));
+
+    let expanded = false;
+    expandAllButton?.addEventListener('click', () => {
+      expanded = !expanded;
+      faqItems.forEach(item => item.open = expanded);
+      expandAllButton.textContent = expanded ? 'Cerrar FAQ' : 'Expandir FAQ';
+    });
+
+    const savedTheme = localStorage.getItem('gc-theme');
+    if (savedTheme === 'dark') document.documentElement.classList.add('dark');
+
+    themeToggle?.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('gc-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      alert('Puedes conectar este botón a un modo oscuro completo si luego decides definir la paleta dark en Tailwind/CSS.');
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Guía Completa del Lenguaje Canino",
+    "description": "Guía extensa y basada en ciencia para interpretar la comunicación canina.",
+    "author": {
+      "@type": "Person",
+      "name": "Jenner Feijoo"
+    },
+    "inLanguage": "es",
+    "about": ["comportamiento canino", "lenguaje canino", "bienestar animal"]
+  }
+  </script>
 </body>
 </html>
